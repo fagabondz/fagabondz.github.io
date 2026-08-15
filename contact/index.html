@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Portfolio</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#0A0A0A',
+                        surface: '#111111',
+                        border: 'rgba(255, 255, 255, 0.1)',
+                        text: '#EDEDED',
+                        muted: '#888888',
+                        accent: '#E5E5E5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <style>
+        /* Custom minimal scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        /* Utility for hairline borders */
+        .hairline-t { border-top: 1px solid rgba(255,255,255,0.1); }
+        .hairline-b { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-text font-sans antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header / Navbar Component -->
+    <!-- views/components/navbar.php -->
+<nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand / Logo -->
+            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
+                <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
+                    Engineering.
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
+                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                    <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
+        <div class="min-h-0">
+            <div class="px-6 py-6 space-y-4">
+                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
+                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col">
+        <!-- views/contact/index.php -->
+<div class="max-w-4xl mx-auto px-6 py-24 md:py-32 flex flex-col gap-24">
+    
+    <!-- Hero Section -->
+    <section class="flex flex-col gap-6">
+        <div class="flex items-center gap-4 mb-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">/contact</span>
+            <div class="h-[1px] flex-grow bg-border"></div>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-text leading-[1.1]">
+            Let's Build Something<br>
+            <span class="text-muted font-medium">Resilient Together.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-muted font-light leading-relaxed max-w-2xl mt-2">
+            Whether you have a question about system architecture, software engineering, or a potential collaboration, feel free to reach out.
+        </p>
+    </section>
+
+    <!-- Communication Channels Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Email -->
+        <a href="mailto:contact@engineeringportfolio.com" class="group bg-surface border border-border p-8 rounded-2xl flex flex-col justify-between gap-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                    <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">Direct</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs font-mono text-muted">Email</span>
+                <span class="text-lg font-medium text-text group-hover:text-accent transition-colors">contact@engineeringportfolio.com</span>
+            </div>
+        </a>
+
+        <!-- GitHub -->
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-8 rounded-2xl flex flex-col justify-between gap-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                    <i data-lucide="github" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">Code</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs font-mono text-muted">GitHub</span>
+                <span class="text-lg font-medium text-text group-hover:text-accent transition-colors">github.com</span>
+            </div>
+        </a>
+
+        <!-- LinkedIn -->
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-8 rounded-2xl flex flex-col justify-between gap-8 hover:border-accent/40 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">Network</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs font-mono text-muted">LinkedIn</span>
+                <span class="text-lg font-medium text-text group-hover:text-accent transition-colors">linkedin.com/in</span>
+            </div>
+        </a>
+
+        <!-- Location -->
+        <div class="bg-surface border border-border p-8 rounded-2xl flex flex-col justify-between gap-8">
+            <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text">
+                    <i data-lucide="map-pin" class="w-6 h-6"></i>
+                </div>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">Timezone</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs font-mono text-muted">Location & Availability</span>
+                <span class="text-lg font-medium text-text">Indonesia (UTC+8 / UTC+7) • Remote</span>
+            </div>
+        </div>
+
+    </section>
+
+</div>
+    </main>
+
+    <!-- Footer Component -->
+    <!-- views/components/footer.php -->
+<footer class="mt-auto border-t border-border">
+    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex flex-col gap-1 text-center md:text-left">
+            <span class="text-sm font-semibold text-text opacity-90">Ready to build something?</span>
+            <a href="mailto:email@example.com" class="text-sm text-muted hover:text-text transition-colors">Let's talk</a>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-sm text-muted hover:text-text transition-colors">GitHub</a>
+            <a href="#" class="text-sm text-muted hover:text-text transition-colors">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+    <!-- Module Initialization Scripts -->
+    <script src="/assets/js/app.js" type="module"></script>
+    <script>
+        // Initialize Lucide Icons globally
+        lucide.createIcons();
+    </script>
+</body>
+</html>

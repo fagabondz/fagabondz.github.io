@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Portfolio</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#0A0A0A',
+                        surface: '#111111',
+                        border: 'rgba(255, 255, 255, 0.1)',
+                        text: '#EDEDED',
+                        muted: '#888888',
+                        accent: '#E5E5E5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <style>
+        /* Custom minimal scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        /* Utility for hairline borders */
+        .hairline-t { border-top: 1px solid rgba(255,255,255,0.1); }
+        .hairline-b { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-text font-sans antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header / Navbar Component -->
+    <!-- views/components/navbar.php -->
+<nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand / Logo -->
+            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
+                <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
+                    Engineering.
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
+                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                    <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
+        <div class="min-h-0">
+            <div class="px-6 py-6 space-y-4">
+                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
+                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col">
+        <section class="relative min-h-screen flex flex-col items-center justify-center bg-surface overflow-hidden pt-20 pb-20">
+    <!-- Abstract Background -->
+    <div class="absolute inset-0 pointer-events-none z-0">
+        <!-- Soft Gradient & Blurs -->
+        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full mix-blend-multiply"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full mix-blend-multiply"></div>
+        
+        <!-- Engineering Grid / Blueprint pattern (SVG) -->
+        <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="blueprint-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <rect width="40" height="40" fill="none" stroke="currentColor" stroke-width="0.5" class="text-muted"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#blueprint-grid)" />
+        </svg>
+
+        <!-- Noise overlay (light CSS trick using embedded base64 SVG) -->
+        <div class="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiAvPgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIiAvPgo8cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIiAvPgo8L3N2Zz4=')]"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-2xl mx-auto">
+        
+        <!-- Abstract Illustration -->
+        <div class="err-reveal relative w-64 h-64 mb-10 flex items-center justify-center">
+            <!-- Node Connections SVG -->
+            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
+                <!-- Lines -->
+                <path d="M 50 150 L 100 50 L 150 150" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted" stroke-dasharray="4 4"/>
+                <path d="M 30 100 L 170 100" fill="none" stroke="currentColor" stroke-width="1.5" class="text-primary/40"/>
+                
+                <!-- Nodes -->
+                <circle cx="100" cy="50" r="5" class="fill-primary" id="err-node-1"/>
+                <circle cx="50" cy="150" r="6" class="fill-accent" id="err-node-2"/>
+                <circle cx="150" cy="150" r="6" class="fill-blue-400" id="err-node-3"/>
+                <circle cx="30" cy="100" r="4" class="fill-orange-400" id="err-node-4"/>
+                <circle cx="170" cy="100" r="4" class="fill-purple-400" id="err-node-5"/>
+            </svg>
+            
+            <!-- Central overlapping blur/glow -->
+            <div class="absolute w-32 h-32 bg-white rounded-full shadow-[0_0_40px_rgba(0,0,0,0.05)] flex items-center justify-center border border-border animate-[pulse_4s_infinite]">
+                 <span class="text-5xl font-black text-dark tracking-tighter">404</span>
+            </div>
+        </div>
+
+        <div class="err-reveal inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-border shadow-sm text-dark mb-6">
+            <i data-lucide="compass" class="w-4 h-4 text-primary"></i>
+            <span class="text-xs font-bold uppercase tracking-widest text-muted">Error 404</span>
+        </div>
+
+        <h1 class="err-reveal text-5xl md:text-6xl font-extrabold text-dark tracking-tight leading-tight mb-6">
+            Looks Like<br/>
+            You're Off The Map.
+        </h1>
+        
+        <p class="err-reveal text-lg md:text-xl text-muted leading-relaxed font-normal max-w-lg mx-auto mb-10">
+            The page you're looking for doesn't exist or may have been moved.
+        </p>
+        
+        <div class="err-reveal flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+            <!-- Primary Button -->
+            <a href="/" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-white bg-dark rounded-xl hover:bg-gray-800 hover:-translate-y-0.5 transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
+                <i data-lucide="home" class="w-4 h-4 mr-2"></i> Back To Home
+            </a>
+            <!-- Secondary Button -->
+            <a href="/projects" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-dark bg-white border border-border rounded-xl hover:bg-surface hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
+                Browse Projects <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            </a>
+        </div>
+
+    </div>
+</section>    </main>
+
+    <!-- Footer Component -->
+    <!-- views/components/footer.php -->
+<footer class="mt-auto border-t border-border">
+    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex flex-col gap-1 text-center md:text-left">
+            <span class="text-sm font-semibold text-text opacity-90">Ready to build something?</span>
+            <a href="mailto:email@example.com" class="text-sm text-muted hover:text-text transition-colors">Let's talk</a>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-sm text-muted hover:text-text transition-colors">GitHub</a>
+            <a href="#" class="text-sm text-muted hover:text-text transition-colors">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+    <!-- Module Initialization Scripts -->
+    <script src="/assets/js/app.js" type="module"></script>
+    <script>
+        // Initialize Lucide Icons globally
+        lucide.createIcons();
+    </script>
+</body>
+</html>

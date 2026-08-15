@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Engineering Portfolio</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#0A0A0A',
+                        surface: '#111111',
+                        border: 'rgba(255, 255, 255, 0.1)',
+                        text: '#EDEDED',
+                        muted: '#888888',
+                        accent: '#E5E5E5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <style>
+        /* Custom minimal scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        /* Utility for hairline borders */
+        .hairline-t { border-top: 1px solid rgba(255,255,255,0.1); }
+        .hairline-b { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-text font-sans antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header / Navbar Component -->
+    <!-- views/components/navbar.php -->
+<nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+            <!-- Brand / Logo -->
+            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
+                <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
+                    Engineering.
+                </span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center gap-8">
+                                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-text">/projects</a>
+                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <div class="md:hidden flex items-center">
+                <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                    <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                    <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
+        <div class="min-h-0">
+            <div class="px-6 py-6 space-y-4">
+                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-text">/projects</a>
+                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col">
+        <!-- views/projects/detail.php -->
+
+<!-- 1. HERO SECTION -->
+<section class="relative pt-32 pb-16 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:items-end">
+        
+        <!-- Left: Project Title -->
+        <div class="flex-1 flex flex-col gap-6">
+            <div class="flex items-center gap-4">
+                <a href="/projects" class="text-xs font-mono text-muted uppercase tracking-widest hover:text-text transition-colors">/projects</a>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">/</span>
+                <span class="text-xs font-mono text-text uppercase tracking-widest">turikaleprint</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
+                TurikalePrint            </h1>
+        </div>
+
+        <!-- Right: Meta Data Grid -->
+        <div class="w-full lg:w-[400px] grid grid-cols-2 gap-x-8 gap-y-6 text-sm font-mono border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-8">
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted">Category</span>
+                <span class="text-text font-medium">Web Development</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted">Date</span>
+                <span class="text-text font-medium">Aug 2026</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted">Status</span>
+                <span class="text-text font-medium">Published</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted">Role</span>
+                <span class="text-text font-medium">Advanced</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Image -->
+<section class="px-6 pb-24">
+    <div class="max-w-6xl mx-auto">
+        <div class="w-full aspect-[21/9] bg-surface border border-border rounded-2xl overflow-hidden relative group">
+            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <!-- Placeholder for actual image -->
+                <div class="absolute inset-0 flex items-center justify-center text-muted">
+                    <i data-lucide="image" class="w-12 h-12 opacity-30"></i>
+                </div>
+                    </div>
+    </div>
+</section>
+
+<!-- 2. PROJECT OVERVIEW -->
+<section class="py-24 px-6 border-y border-border bg-surface/30">
+    <div class="max-w-4xl mx-auto text-center">
+        <p class="text-2xl md:text-3xl text-text font-light leading-relaxed opacity-90">
+            Comprehensive management system designed specifically for large scale printing operations.        </p>
+    </div>
+</section>
+
+<!-- CASE STUDY CONTENT -->
+<article class="py-32 px-6 space-y-32">
+    
+    <!-- 3. THE PROBLEM -->
+    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4 flex flex-col gap-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">01 / The Context</span>
+            <h2 class="text-3xl font-medium text-text">The Problem</h2>
+        </div>
+        <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
+            <p>[Brief context: e.g. "The printing shop was handling 500+ daily orders entirely through WhatsApp and manual spreadsheets, leading to a 15% error rate and lost revenue."]</p>
+            <ul class="flex flex-col gap-4 mt-4">
+                <li class="flex gap-4">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0"></i>
+                    <span class="text-text font-medium">Operators were overwhelmed by manual data entry.</span>
+                </li>
+                <li class="flex gap-4">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0"></i>
+                    <span class="text-text font-medium">Customers had no visibility over their print status.</span>
+                </li>
+                <li class="flex gap-4">
+                    <i data-lucide="x-circle" class="w-6 h-6 text-red-500 shrink-0"></i>
+                    <span class="text-text font-medium">Production machines had frequent idle times due to unsynchronized queues.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 4. RESEARCH & ANALYSIS -->
+    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4 flex flex-col gap-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">02 / Discovery</span>
+            <h2 class="text-3xl font-medium text-text">Research & Analysis</h2>
+        </div>
+        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
+                <i data-lucide="users" class="w-6 h-6 text-muted"></i>
+                <h3 class="text-text font-medium">User Interviews</h3>
+                <p class="text-sm text-muted">Talked to 3 operators. Found out that 40% of their time is spent just answering "is my print ready?"</p>
+            </div>
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
+                <i data-lucide="activity" class="w-6 h-6 text-muted"></i>
+                <h3 class="text-text font-medium">System Bottleneck</h3>
+                <p class="text-sm text-muted">The core issue wasn't the printing speed, but the data flow between cashier and production.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. SOLUTION -->
+    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4 flex flex-col gap-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">03 / The Approach</span>
+            <h2 class="text-3xl font-medium text-text">Solution</h2>
+        </div>
+        <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
+            <p>[e.g. "I designed a centralized queue management system. It acts as a single source of truth, capturing orders directly from a self-service portal and distributing them to specific machine queues based on material type."]</p>
+        </div>
+    </section>
+
+    <!-- 6. SYSTEM ARCHITECTURE -->
+    <section class="max-w-6xl mx-auto flex flex-col gap-12">
+        <div class="flex flex-col gap-2 text-center items-center">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">04 / High Level Design</span>
+            <h2 class="text-3xl font-medium text-text">System Architecture</h2>
+        </div>
+        
+        <!-- Minimalist CSS Architecture Diagram -->
+        <div class="w-full bg-surface/50 border border-border rounded-2xl p-8 md:p-16 flex items-center justify-center overflow-x-auto">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 font-mono text-sm">
+                <!-- Client -->
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-border bg-background flex items-center justify-center">
+                        <i data-lucide="laptop" class="w-6 h-6 text-muted"></i>
+                    </div>
+                    <span class="text-text">Client</span>
+                </div>
+                
+                <!-- Arrow -->
+                <i data-lucide="arrow-right" class="w-5 h-5 text-muted hidden md:block"></i>
+                <i data-lucide="arrow-down" class="w-5 h-5 text-muted md:hidden"></i>
+                
+                <!-- Router/LB -->
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-xl border border-border bg-background flex items-center justify-center">
+                        <i data-lucide="network" class="w-6 h-6 text-muted"></i>
+                    </div>
+                    <span class="text-text">Nginx</span>
+                </div>
+
+                <!-- Arrow -->
+                <i data-lucide="arrow-right" class="w-5 h-5 text-muted hidden md:block"></i>
+                <i data-lucide="arrow-down" class="w-5 h-5 text-muted md:hidden"></i>
+                
+                <!-- App Server (Controller) -->
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-24 h-24 rounded-xl border border-accent/50 bg-accent/5 flex items-center justify-center">
+                        <div class="text-center">
+                            <i data-lucide="server" class="w-6 h-6 text-accent mx-auto mb-1"></i>
+                            <span class="text-xs font-bold text-accent">Core API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Arrow -->
+                <i data-lucide="arrow-right" class="w-5 h-5 text-muted hidden md:block"></i>
+                <i data-lucide="arrow-down" class="w-5 h-5 text-muted md:hidden"></i>
+                
+                <!-- Database -->
+                <div class="flex flex-col items-center gap-3">
+                    <div class="w-16 h-16 rounded-full border border-border bg-background flex items-center justify-center">
+                        <i data-lucide="database" class="w-6 h-6 text-muted"></i>
+                    </div>
+                    <span class="text-text">MySQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. DEVELOPMENT PROCESS -->
+    <section class="max-w-5xl mx-auto flex flex-col gap-12">
+        <div class="flex flex-col gap-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">05 / Execution</span>
+            <h2 class="text-3xl font-medium text-text">Development Process</h2>
+        </div>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 font-mono text-sm">
+            <div class="flex flex-col gap-4">
+                <div class="w-full h-1 bg-border relative">
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-muted"></div>
+                </div>
+                <div>
+                    <span class="text-text font-medium block mb-1">Planning</span>
+                    <span class="text-xs text-muted">Req gathering & DB design</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="w-full h-1 bg-border relative">
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-muted"></div>
+                </div>
+                <div>
+                    <span class="text-text font-medium block mb-1">Design</span>
+                    <span class="text-xs text-muted">Wireframing UX flows</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="w-full h-1 bg-border relative">
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-accent"></div>
+                </div>
+                <div>
+                    <span class="text-text font-medium block mb-1">Development</span>
+                    <span class="text-xs text-muted">Core logic & integrations</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="w-full h-1 bg-border relative">
+                    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-muted"></div>
+                </div>
+                <div>
+                    <span class="text-text font-medium block mb-1">Deployment</span>
+                    <span class="text-xs text-muted">CI/CD & Server config</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. TECHNOLOGY STACK -->
+    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4 flex flex-col gap-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">06 / Stack</span>
+            <h2 class="text-3xl font-medium text-text">Technology</h2>
+        </div>
+        <div class="md:col-span-8 flex flex-wrap gap-4">
+                            <!-- Badges -->
+                <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
+                    <i data-lucide="code-2" class="w-5 h-5 text-muted"></i>
+                    <span class="text-sm font-mono text-text">PHP Native</span>
+                </div>
+                <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
+                    <i data-lucide="database" class="w-5 h-5 text-muted"></i>
+                    <span class="text-sm font-mono text-text">MySQL</span>
+                </div>
+                <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
+                    <i data-lucide="layout" class="w-5 h-5 text-muted"></i>
+                    <span class="text-sm font-mono text-text">Tailwind CSS</span>
+                </div>
+                <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
+                    <i data-lucide="file-json" class="w-5 h-5 text-muted"></i>
+                    <span class="text-sm font-mono text-text">JavaScript</span>
+                </div>
+                <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
+                    <i data-lucide="git-branch" class="w-5 h-5 text-muted"></i>
+                    <span class="text-sm font-mono text-text">Git</span>
+                </div>
+                    </div>
+    </section>
+
+    <!-- 9. CHALLENGES & 10. DECISIONS -->
+    <section class="max-w-5xl mx-auto flex flex-col gap-16">
+        
+        <!-- Challenges -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4 flex flex-col gap-2">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">07 / Obstacles</span>
+                <h2 class="text-3xl font-medium text-text">Challenges</h2>
+            </div>
+            <div class="md:col-span-8 flex flex-col gap-8">
+                <div class="pl-6 border-l-2 border-accent">
+                    <h3 class="text-lg font-medium text-text mb-2">Real-time State Synchronization</h3>
+                    <p class="text-muted leading-relaxed font-light">[Explain the challenge: e.g. "Keeping the cashier's view in sync with the production machines without using WebSockets (due to hosting constraints)."]</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engineering Decisions (Crucial) -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4 flex flex-col gap-2">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">08 / Rationale</span>
+                <h2 class="text-3xl font-medium text-text">Engineering Decisions</h2>
+            </div>
+            <div class="md:col-span-8 flex flex-col gap-8">
+                <!-- Callout Box -->
+                <div class="bg-surface border border-border p-8 rounded-2xl">
+                    <h3 class="text-lg font-mono text-text mb-4">Q: Why PHP Native over Laravel?</h3>
+                    <p class="text-muted leading-relaxed font-light">
+                        [Answer: e.g. "The client's existing legacy server could only run older PHP versions with tight memory limits. I built a custom micro-MVC router to keep the footprint under 2MB while still maintaining clean separation of concerns."]
+                    </p>
+                </div>
+                <!-- Callout Box -->
+                <div class="bg-surface border border-border p-8 rounded-2xl">
+                    <h3 class="text-lg font-mono text-text mb-4">Q: Why Polling over WebSockets?</h3>
+                    <p class="text-muted leading-relaxed font-light">
+                        [Answer: e.g. "Given the shared hosting constraint, WebSockets weren't viable. I implemented an optimized long-polling mechanism using JS, hitting a lightweight endpoint that only queries indexed timestamp columns, keeping server load under 5%."]
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- 11. GALLERY -->
+    <section class="max-w-6xl mx-auto flex flex-col gap-12">
+        <div class="flex flex-col gap-2 text-center items-center">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">09 / Interfaces</span>
+            <h2 class="text-3xl font-medium text-text">Gallery</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+            <!-- Large Image -->
+            <div class="md:col-span-12 aspect-video bg-surface border border-border rounded-xl flex items-center justify-center">
+                <span class="text-xs font-mono text-muted opacity-50">[Dashboard Screenshot]</span>
+            </div>
+            <!-- Half Images -->
+            <div class="md:col-span-6 aspect-[4/3] bg-surface border border-border rounded-xl flex items-center justify-center">
+                <span class="text-xs font-mono text-muted opacity-50">[Mobile Flow Screenshot]</span>
+            </div>
+            <div class="md:col-span-6 aspect-[4/3] bg-surface border border-border rounded-xl flex items-center justify-center">
+                <span class="text-xs font-mono text-muted opacity-50">[Settings Screenshot]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. RESULT -->
+    <section class="max-w-5xl mx-auto flex flex-col gap-12">
+        <div class="flex flex-col gap-2 text-center items-center">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">10 / The Impact</span>
+            <h2 class="text-3xl font-medium text-text">Result</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col items-center text-center gap-2">
+                <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">40%</span>
+                <span class="text-sm font-mono text-muted uppercase tracking-widest">Faster Processing</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2">
+                <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">&lt;1%</span>
+                <span class="text-sm font-mono text-muted uppercase tracking-widest">Error Rate</span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-2">
+                <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">100%</span>
+                <span class="text-sm font-mono text-muted uppercase tracking-widest">Digitalized</span>
+            </div>
+        </div>
+        
+        <p class="text-center text-lg text-muted font-light max-w-2xl mx-auto mt-4">
+            [Explain outcome: e.g. "The system successfully eliminated paper trails, reduced customer wait times, and gave the management clear visibility into daily production metrics."]
+        </p>
+    </section>
+
+    <!-- 13. LESSONS & 14. ROADMAP -->
+    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-border">
+        
+        <!-- Lessons Learned -->
+        <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-2">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">11 / Retrospective</span>
+                <h2 class="text-2xl font-medium text-text">Lessons Learned</h2>
+            </div>
+            <ul class="flex flex-col gap-4 text-muted font-light">
+                <li class="flex gap-4">
+                    <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i>
+                    <span>[Lesson 1: Don't overengineer features users don't need.]</span>
+                </li>
+                <li class="flex gap-4">
+                    <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i>
+                    <span>[Lesson 2: Always index columns used in polling queries.]</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Future Improvements -->
+        <div class="flex flex-col gap-8">
+            <div class="flex flex-col gap-2">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">12 / Roadmap</span>
+                <h2 class="text-2xl font-medium text-text">Future Improvements</h2>
+            </div>
+            <ul class="flex flex-col gap-4 text-muted font-light">
+                <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
+                    <i data-lucide="bot" class="w-5 h-5 text-muted"></i>
+                    <span>Integrate AI for automated crop detection.</span>
+                </li>
+                <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
+                    <i data-lucide="cloud" class="w-5 h-5 text-muted"></i>
+                    <span>Migrate to a scalable cloud instance (AWS/GCP).</span>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+
+</article>
+
+<!-- 15. NEXT PROJECT -->
+<section class="border-t border-border bg-surface/30">
+    <a href="#" class="group block max-w-5xl mx-auto px-6 py-32 text-center cursor-pointer">
+        <span class="text-xs font-mono text-muted uppercase tracking-widest block mb-6">Up Next</span>
+        <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-text group-hover:text-accent transition-colors duration-500">
+            [Next Project Name]
+        </h2>
+        <div class="mt-8 flex justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-500">
+            <div class="flex items-center gap-2 text-sm font-mono text-accent">
+                View Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </div>
+        </div>
+    </a>
+</section>    </main>
+
+    <!-- Footer Component -->
+    <!-- views/components/footer.php -->
+<footer class="mt-auto border-t border-border">
+    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex flex-col gap-1 text-center md:text-left">
+            <span class="text-sm font-semibold text-text opacity-90">Ready to build something?</span>
+            <a href="mailto:email@example.com" class="text-sm text-muted hover:text-text transition-colors">Let's talk</a>
+        </div>
+        
+        <div class="flex items-center gap-6">
+            <a href="#" class="text-sm text-muted hover:text-text transition-colors">GitHub</a>
+            <a href="#" class="text-sm text-muted hover:text-text transition-colors">LinkedIn</a>
+        </div>
+    </div>
+</footer>
+    <!-- Module Initialization Scripts -->
+    <script src="/assets/js/app.js" type="module"></script>
+    <script>
+        // Initialize Lucide Icons globally
+        lucide.createIcons();
+    </script>
+</body>
+</html>

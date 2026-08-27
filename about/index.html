@@ -34,7 +34,7 @@
     </script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/maz.github.io/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <style>
         /* Custom minimal scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -58,17 +58,16 @@
     <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
             <!-- Brand / Logo -->
-            <a href="/maz.github.io/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
+            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
                 <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
                     Engineering.                </span>
             </a>
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
-                                <a href="/maz.github.io/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/maz.github.io/projects" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
-                <a href="/maz.github.io/about" class="text-xs font-mono transition-colors duration-200 text-text">/about</a>
-                <a href="/maz.github.io/contact" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/contact</a>
+                                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
+                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-text">/about</a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
@@ -85,10 +84,9 @@
     <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
         <div class="min-h-0">
             <div class="px-6 py-6 space-y-4">
-                <a href="/maz.github.io/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/maz.github.io/projects" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
-                <a href="/maz.github.io/about" class="block text-sm font-mono transition-colors duration-200 text-text">/about</a>
-                <a href="/maz.github.io/contact" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/contact</a>
+                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
+                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-text">/about</a>
             </div>
         </div>
     </div>
@@ -183,28 +181,93 @@
                             </ul>
         </section>
     
-    <!-- Certifications -->
+    <!-- Certifications / Credentials -->
     <section id="certifications" class="flex flex-col gap-10">
         <div class="flex items-center gap-4 mb-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">04 / Certifications</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">04 / Credentials & Certifications</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
-                                                                    <div onclick="openPublicCertModal('/maz.github.io/uploads/certifications/cert_20260815_132149_5b5756cb.pdf', 'google', 'MikroTik', '2026', 'fwfw', true)" class="group flex flex-col gap-3 cursor-pointer">
-                        <div class="relative w-full aspect-[3/4] rounded-xl bg-surface border border-border overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                                                                                                <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
-                                        <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest">PDF Certificate</span>
-                                    </div>
-                                                                                    </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-sm font-medium text-text group-hover:text-accent transition-colors line-clamp-2">google</h3>
-                            <span class="text-xs font-mono text-muted mt-1">MikroTik • 2026</span>
-                        </div>
                     </div>
-                                    </div>
+    </section>
+
+    <!-- Let's Connect (Contact Section) -->
+    <section id="connect" class="flex flex-col gap-8 pt-6 border-t border-border">
+        <div class="flex items-center gap-4 mb-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">05 / Let's Connect</span>
+            <div class="h-[1px] flex-grow bg-border"></div>
+        </div>
+
+        <div class="flex flex-col gap-3">
+            <h2 class="text-3xl md:text-5xl font-bold tracking-tighter text-text">
+                Let&#039;s Build Something<br>
+                <span class="text-muted font-medium">Resilient Together.</span>
+            </h2>
+                            <p class="text-base md:text-lg text-muted font-light leading-relaxed max-w-2xl mt-1">
+                    Whether you have a question about system architecture, software engineering, or a potential collaboration, feel free to reach out.                </p>
+                    </div>
+
+        <!-- Communication Channels Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+            
+            <!-- Email -->
+            <a href="mailto:contact@engineeringportfolio.com" class="group bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6 hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Direct Mail</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                    <span class="text-xs font-mono text-muted">Email</span>
+                    <span class="text-base font-medium text-text group-hover:text-accent transition-colors break-all">contact@engineeringportfolio.com</span>
+                </div>
+            </a>
+
+            <!-- GitHub -->
+                                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6 hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Source Code</span>
+                    </div>
+                    <div class="flex flex-col gap-0.5">
+                        <span class="text-xs font-mono text-muted">GitHub</span>
+                        <span class="text-base font-medium text-text group-hover:text-accent transition-colors">github.com</span>
+                    </div>
+                </a>
+            
+            <!-- LinkedIn -->
+                                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6 hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300">
+                    <div class="flex items-center justify-between">
+                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </div>
+                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Professional Network</span>
+                    </div>
+                    <div class="flex flex-col gap-0.5">
+                        <span class="text-xs font-mono text-muted">LinkedIn</span>
+                        <span class="text-base font-medium text-text group-hover:text-accent transition-colors">linkedin.com/in</span>
+                    </div>
+                </a>
+            
+            <!-- Location & Availability -->
+            <div class="bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6">
+                <div class="flex items-center justify-between">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Availability</span>
+                </div>
+                <div class="flex flex-col gap-0.5">
+                    <span class="text-xs font-mono text-muted">Location & Timezone</span>
+                    <span class="text-base font-medium text-text">Indonesia (UTC+8 / UTC+7) • Remote</span>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 </div>
@@ -331,7 +394,7 @@
     </div>
 </footer>
     <!-- Module Initialization Scripts -->
-    <script src="/maz.github.io/assets/js/app.js" type="module"></script>
+    <script src="/assets/js/app.js" type="module"></script>
     <script>
         // Initialize Lucide Icons globally
         lucide.createIcons();

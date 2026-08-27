@@ -34,7 +34,7 @@
     </script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/maz.github.io/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <style>
         /* Custom minimal scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -58,17 +58,16 @@
     <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
             <!-- Brand / Logo -->
-            <a href="/maz.github.io/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
+            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
                 <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
                     Engineering.                </span>
             </a>
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
-                                <a href="/maz.github.io/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/maz.github.io/projects" class="text-xs font-mono transition-colors duration-200 text-text">/projects</a>
-                <a href="/maz.github.io/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
-                <a href="/maz.github.io/contact" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/contact</a>
+                                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-text">/projects</a>
+                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
@@ -85,10 +84,9 @@
     <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
         <div class="min-h-0">
             <div class="px-6 py-6 space-y-4">
-                <a href="/maz.github.io/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/maz.github.io/projects" class="block text-sm font-mono transition-colors duration-200 text-text">/projects</a>
-                <a href="/maz.github.io/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
-                <a href="/maz.github.io/contact" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/contact</a>
+                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-text">/projects</a>
+                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
             </div>
         </div>
     </div>
@@ -103,11 +101,13 @@
         
         <!-- Left: Project Title -->
         <div class="flex-1 flex flex-col gap-6">
-            <div class="flex items-center gap-4">
-                <a href="/maz.github.io/projects" class="text-xs font-mono text-muted uppercase tracking-widest hover:text-text transition-colors">/projects</a>
+            <div class="flex items-center gap-3">
+                <a href="/projects" class="text-xs font-mono text-muted uppercase tracking-widest hover:text-text transition-colors">/projects</a>
                 <span class="text-xs font-mono text-muted uppercase tracking-widest">/</span>
                 <span class="text-xs font-mono text-text uppercase tracking-widest">photo-print-web-app</span>
-            </div>
+                
+                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 ml-2">SOFTWARE & CYBERSECURITY</span>
+                            </div>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
                 Photo Print Web App            </h1>
         </div>
@@ -123,11 +123,11 @@
                 <span class="text-text font-medium">Aug 2026</span>
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-xs uppercase tracking-widest text-muted">Status</span>
-                <span class="text-text font-medium">Published</span>
+                <span class="text-xs uppercase tracking-widest text-muted">Methodology</span>
+                <span class="text-text font-medium">STAR Method</span>
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-xs uppercase tracking-widest text-muted">Role</span>
+                <span class="text-xs uppercase tracking-widest text-muted">Role / Level</span>
                 <span class="text-text font-medium">Intermediate</span>
             </div>
         </div>
@@ -148,31 +148,37 @@
 
 <!-- 2. PROJECT OVERVIEW -->
     <section class="py-24 px-6 border-y border-border bg-surface/30">
-        <div class="max-w-4xl mx-auto text-center">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-muted">
+                Executive Summary            </span>
             <p class="text-2xl md:text-3xl text-text font-light leading-relaxed opacity-90">
                 A high-performance digital printing platform built to eliminate workflow bottlenecks. This project bridges the gap between customer orders and printing machines in real-time.            </p>
         </div>
     </section>
 
-<!-- CASE STUDY CONTENT -->
+<!-- CASE STUDY CONTENT (STAR vs MAKER'S STORY) -->
 <article class="py-32 px-6 space-y-32">
     
-    <!-- 3. THE PROBLEM -->
+    <!-- 3. THE PROBLEM (SITUATION vs THE SPARK) -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">01 / The Context</span>
-                <h2 class="text-3xl font-medium text-text">The Problem</h2>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                    01 / Situation                </span>
+                <h2 class="text-3xl font-medium text-text">
+                    Situation                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
                 <p>The printing shop was handling 500+ daily orders entirely through WhatsApp and manual spreadsheets, leading to a 15% error rate and lost revenue. Operators were overwhelmed by manual data entry, customers had no visibility over print status, and production machines had frequent idle times.</p>
             </div>
         </section>
     
-    <!-- 4. RESEARCH & ANALYSIS -->
+    <!-- 4. RESEARCH & ANALYSIS (TASK vs THE BLUEPRINT) -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">02 / Discovery</span>
-                <h2 class="text-3xl font-medium text-text">Research & Analysis</h2>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                    02 / Task                </span>
+                <h2 class="text-3xl font-medium text-text">
+                    Task                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
                 <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
@@ -182,32 +188,36 @@
             </div>
         </section>
     
-    <!-- 5. SOLUTION -->
+    <!-- 5. SOLUTION (ACTION vs THE BUILD) -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">03 / The Approach</span>
-                <h2 class="text-3xl font-medium text-text">Solution</h2>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                    03 / Action                </span>
+                <h2 class="text-3xl font-medium text-text">
+                    Action                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
                 <p>Designed a centralized queue management and automated layout generation system that acts as a single source of truth, capturing orders and distributing them to machine queues.</p>
             </div>
         </section>
     
-    <!-- 6. SYSTEM ARCHITECTURE -->
+    <!-- 6. SYSTEM ARCHITECTURE / SCHEMATIC -->
     <section class="max-w-6xl mx-auto flex flex-col gap-12">
         <div class="flex flex-col gap-2 text-center items-center">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">04 / High Level Design</span>
-            <h2 class="text-3xl font-medium text-text">System Architecture</h2>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                04 / Architecture            </span>
+            <h2 class="text-3xl font-medium text-text">
+                System Architecture            </h2>
         </div>
         
                     <div class="max-w-3xl mx-auto text-center text-muted font-light">
                 <p>Lightweight modular architecture with browser-side canvas rendering, asynchronous order submission, and local processing server to maintain sub-second response times.</p>
             </div>
         
-        <!-- Minimalist CSS Architecture Diagram -->
+        <!-- Minimalist Architecture / Circuit Diagram Layout -->
         <div class="w-full bg-surface/50 border border-border rounded-2xl p-8 md:p-16 flex items-center justify-center overflow-x-auto">
             <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 font-mono text-sm">
-                <!-- Client -->
+                <!-- Input / Sensor / Client -->
                 <div class="flex flex-col items-center gap-3">
                     <div class="w-16 h-16 rounded-full border border-border bg-background flex items-center justify-center">
                         <i data-lucide="laptop" class="w-6 h-6 text-muted"></i>
@@ -219,7 +229,7 @@
                 <i data-lucide="arrow-right" class="w-5 h-5 text-muted hidden md:block"></i>
                 <i data-lucide="arrow-down" class="w-5 h-5 text-muted md:hidden"></i>
                 
-                <!-- Gateway / Controller -->
+                <!-- Core Engine / Microcontroller -->
                 <div class="flex flex-col items-center gap-3">
                     <div class="w-24 h-24 rounded-xl border border-accent/50 bg-accent/5 flex items-center justify-center">
                         <div class="text-center">
@@ -233,7 +243,7 @@
                 <i data-lucide="arrow-right" class="w-5 h-5 text-muted hidden md:block"></i>
                 <i data-lucide="arrow-down" class="w-5 h-5 text-muted md:hidden"></i>
                 
-                <!-- Database -->
+                <!-- Actuator / Database -->
                 <div class="flex flex-col items-center gap-3">
                     <div class="w-16 h-16 rounded-full border border-border bg-background flex items-center justify-center">
                         <i data-lucide="database" class="w-6 h-6 text-muted"></i>
@@ -247,8 +257,10 @@
     <!-- 7. DEVELOPMENT PROCESS / IMPLEMENTATION HIGHLIGHTS -->
             <section class="max-w-5xl mx-auto flex flex-col gap-12">
             <div class="flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">05 / Execution</span>
-                <h2 class="text-3xl font-medium text-text">Implementation Highlights</h2>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                    05 / Execution                </span>
+                <h2 class="text-3xl font-medium text-text">
+                    Implementation Highlights                </h2>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-mono text-sm">
@@ -275,11 +287,13 @@
                             </div>
         </section>
     
-    <!-- 8. TECHNOLOGY STACK -->
+    <!-- 8. TECHNOLOGY & TOOLS STACK -->
     <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
         <div class="md:col-span-4 flex flex-col gap-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">06 / Stack</span>
-            <h2 class="text-3xl font-medium text-text">Technology</h2>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                06 / Tech Stack            </span>
+            <h2 class="text-3xl font-medium text-text">
+                Technology            </h2>
         </div>
         <div class="md:col-span-8 flex flex-wrap gap-4">
                                                 <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
@@ -311,8 +325,10 @@
         <!-- Challenges -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
                 <div class="md:col-span-4 flex flex-col gap-2">
-                    <span class="text-xs font-mono text-muted uppercase tracking-widest">07 / Obstacles</span>
-                    <h2 class="text-3xl font-medium text-text">Challenges</h2>
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                        07 / Obstacles                    </span>
+                    <h2 class="text-3xl font-medium text-text">
+                        Challenges                    </h2>
                 </div>
                 <div class="md:col-span-8 flex flex-col gap-8">
                     <div class="pl-6 border-l-2 border-accent">
@@ -324,7 +340,8 @@
         <!-- Engineering Decisions -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
                 <div class="md:col-span-4 flex flex-col gap-2">
-                    <span class="text-xs font-mono text-muted uppercase tracking-widest">08 / Rationale</span>
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                        08 / Rationale                    </span>
                     <h2 class="text-3xl font-medium text-text">Engineering Decisions</h2>
                 </div>
                 <div class="md:col-span-8 flex flex-col gap-8">
@@ -345,11 +362,13 @@
 
     <!-- 11. GALLERY -->
     
-    <!-- 12. RESULT -->
+    <!-- 12. RESULT (STAR RESULT vs THE TEST & BENCHMARK) -->
     <section class="max-w-5xl mx-auto flex flex-col gap-12">
         <div class="flex flex-col gap-2 text-center items-center">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">10 / The Impact</span>
-            <h2 class="text-3xl font-medium text-text">Result</h2>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                10 / The Impact (Result)            </span>
+            <h2 class="text-3xl font-medium text-text">
+                Result            </h2>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -374,11 +393,13 @@
     <!-- 13. LESSONS & 14. ROADMAP -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-border">
             
-            <!-- Lessons Learned -->
+            <!-- Lessons Learned / Workshop Notes -->
                             <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-2">
-                        <span class="text-xs font-mono text-muted uppercase tracking-widest">11 / Retrospective</span>
-                        <h2 class="text-2xl font-medium text-text">Lessons Learned</h2>
+                        <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                            11 / Retrospective                        </span>
+                        <h2 class="text-2xl font-medium text-text">
+                            Lessons Learned                        </h2>
                     </div>
                     <ul class="flex flex-col gap-4 text-muted font-light">
                                                     <li class="flex gap-4">
@@ -392,11 +413,13 @@
                                             </ul>
                 </div>
             
-            <!-- Future Improvements -->
+            <!-- Future Improvements / Next Evolution -->
                             <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-2">
-                        <span class="text-xs font-mono text-muted uppercase tracking-widest">12 / Roadmap</span>
-                        <h2 class="text-2xl font-medium text-text">Future Improvements</h2>
+                        <span class="text-xs font-mono text-muted uppercase tracking-widest">
+                            12 / Roadmap                        </span>
+                        <h2 class="text-2xl font-medium text-text">
+                            Future Improvements                        </h2>
                     </div>
                     <ul class="flex flex-col gap-4 text-muted font-light">
                                                     <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
@@ -416,7 +439,7 @@
 
 <!-- 15. NEXT PROJECT -->
     <section class="border-t border-border bg-surface/30">
-        <a href="/maz.github.io/projects/turikaleprint" class="group block max-w-5xl mx-auto px-6 py-32 text-center cursor-pointer">
+        <a href="/projects/turikaleprint" class="group block max-w-5xl mx-auto px-6 py-32 text-center cursor-pointer">
             <span class="text-xs font-mono text-muted uppercase tracking-widest block mb-6">Up Next</span>
             <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-text group-hover:text-accent transition-colors duration-500">
                 TurikalePrint            </h2>
@@ -445,7 +468,7 @@
     </div>
 </footer>
     <!-- Module Initialization Scripts -->
-    <script src="/maz.github.io/assets/js/app.js" type="module"></script>
+    <script src="/assets/js/app.js" type="module"></script>
     <script>
         // Initialize Lucide Icons globally
         lucide.createIcons();

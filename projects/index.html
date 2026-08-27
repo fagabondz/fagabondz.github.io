@@ -34,7 +34,7 @@
     </script>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/maz.github.io/assets/css/app.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
     <style>
         /* Custom minimal scrollbar */
         ::-webkit-scrollbar { width: 8px; }
@@ -58,17 +58,16 @@
     <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
             <!-- Brand / Logo -->
-            <a href="/maz.github.io/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
+            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
                 <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
                     Engineering.                </span>
             </a>
 
             <!-- Desktop Navigation -->
             <div class="hidden md:flex items-center gap-8">
-                                <a href="/maz.github.io/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/maz.github.io/projects" class="text-xs font-mono transition-colors duration-200 text-text">/projects</a>
-                <a href="/maz.github.io/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
-                <a href="/maz.github.io/contact" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/contact</a>
+                                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-text">/projects</a>
+                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
             </div>
 
             <!-- Mobile Menu Toggle Button -->
@@ -85,10 +84,9 @@
     <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
         <div class="min-h-0">
             <div class="px-6 py-6 space-y-4">
-                <a href="/maz.github.io/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/maz.github.io/projects" class="block text-sm font-mono transition-colors duration-200 text-text">/projects</a>
-                <a href="/maz.github.io/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
-                <a href="/maz.github.io/contact" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/contact</a>
+                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
+                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-text">/projects</a>
+                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
             </div>
         </div>
     </div>
@@ -109,44 +107,105 @@
         </h1>
     </section>
 
-    <!-- Filters -->
-            <section class="flex flex-wrap gap-6 text-sm font-mono text-muted border-b border-border pb-6">
-            <a href="/maz.github.io/projects" class="text-text font-medium hover:text-text transition-colors">All</a>
-                            <span class="hover:text-text transition-colors cursor-pointer">Automation</span>
-                            <span class="hover:text-text transition-colors cursor-pointer">Network Infrastructure</span>
-                            <span class="hover:text-text transition-colors cursor-pointer">Research</span>
-                            <span class="hover:text-text transition-colors cursor-pointer">Web Development</span>
-                    </section>
-    
+    <!-- Project Type Filter Tabs -->
+    <section class="flex flex-wrap items-center gap-3 text-sm font-mono border-b border-border pb-6">
+        <button type="button" data-filter="all" class="filter-tab px-4 py-2 rounded-lg border border-accent/50 bg-white/10 text-text font-medium transition-all duration-200 cursor-pointer">
+            All
+        </button>
+        <button type="button" data-filter="software" class="filter-tab px-4 py-2 rounded-lg border border-border text-muted hover:text-text hover:border-muted transition-all duration-200 cursor-pointer">
+            Software & Cybersecurity
+        </button>
+        <button type="button" data-filter="garage" class="filter-tab px-4 py-2 rounded-lg border border-border text-muted hover:text-text hover:border-muted transition-all duration-200 cursor-pointer">
+            Garage Projects
+        </button>
+    </section>
+
     <!-- Gallery Grid -->
-    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                                    <a href="/maz.github.io/projects/turikaleprint" class="group flex flex-col gap-4 cursor-pointer ">
+    <section id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                                    <a href="/projects/turikaleprint" data-project-type="software" class="project-card group flex flex-col gap-4 cursor-pointer ">
                     <div class="relative w-full aspect-[4/3] md:aspect-video rounded-xl bg-surface border border-border overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                                     <div class="absolute inset-0 flex items-center justify-center text-muted group-hover:scale-105 transition-transform duration-700">
                                 <i data-lucide="image" class="w-10 h-10 opacity-30"></i>
                             </div>
-                                            </div>
+                                                
+                        <!-- Project Type Tag -->
+                        <div class="absolute top-4 right-4 z-20">
+                                                            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 backdrop-blur-md">SOFTWARE</span>
+                                                    </div>
+                    </div>
                     <div class="flex flex-col gap-1">
                         <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors">TurikalePrint</h3>
                         <span class="text-sm font-mono text-muted">Advanced / 2026</span>
                     </div>
                 </a>
-                                            <a href="/maz.github.io/projects/photo-print-web-app" class="group flex flex-col gap-4 cursor-pointer ">
+                                            <a href="/projects/photo-print-web-app" data-project-type="software" class="project-card group flex flex-col gap-4 cursor-pointer ">
                     <div class="relative w-full aspect-[4/3] md:aspect-video rounded-xl bg-surface border border-border overflow-hidden">
                         <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                                     <div class="absolute inset-0 flex items-center justify-center text-muted group-hover:scale-105 transition-transform duration-700">
                                 <i data-lucide="image" class="w-10 h-10 opacity-30"></i>
                             </div>
-                                            </div>
+                                                
+                        <!-- Project Type Tag -->
+                        <div class="absolute top-4 right-4 z-20">
+                                                            <span class="text-[10px] font-mono font-bold px-2 py-1 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 backdrop-blur-md">SOFTWARE</span>
+                                                    </div>
+                    </div>
                     <div class="flex flex-col gap-1">
                         <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors">Photo Print Web App</h3>
                         <span class="text-sm font-mono text-muted">Intermediate / 2026</span>
                     </div>
                 </a>
-                        </section>
+                            
+        <!-- Empty filter state -->
+        <div id="filter-empty-state" class="hidden col-span-2 py-16 text-center text-muted font-mono text-sm">
+            No projects found in this category.
+        </div>
+    </section>
 
-</div>    </main>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.filter-tab');
+        const cards = document.querySelectorAll('.project-card');
+        const emptyState = document.getElementById('filter-empty-state');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+
+                // Update active tab styling
+                tabs.forEach(t => {
+                    t.classList.remove('border-accent/50', 'bg-white/10', 'text-text', 'font-medium');
+                    t.classList.add('border-border', 'text-muted');
+                });
+                this.classList.remove('border-border', 'text-muted');
+                this.classList.add('border-accent/50', 'bg-white/10', 'text-text', 'font-medium');
+
+                // Filter cards
+                let visibleCount = 0;
+                cards.forEach(card => {
+                    const cardType = card.getAttribute('data-project-type');
+                    if (filter === 'all' || cardType === filter) {
+                        card.style.display = 'flex';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                if (emptyState) {
+                    if (visibleCount === 0) {
+                        emptyState.classList.remove('hidden');
+                    } else {
+                        emptyState.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    });
+</script>    </main>
 
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
@@ -164,7 +223,7 @@
     </div>
 </footer>
     <!-- Module Initialization Scripts -->
-    <script src="/maz.github.io/assets/js/app.js" type="module"></script>
+    <script src="/assets/js/app.js" type="module"></script>
     <script>
         // Initialize Lucide Icons globally
         lucide.createIcons();

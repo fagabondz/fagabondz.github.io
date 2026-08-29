@@ -104,12 +104,12 @@
             <div class="flex items-center gap-3">
                 <a href="/projects" class="text-xs font-mono text-muted uppercase tracking-widest hover:text-text transition-colors">/projects</a>
                 <span class="text-xs font-mono text-muted uppercase tracking-widest">/</span>
-                <span class="text-xs font-mono text-text uppercase tracking-widest">photo-print-web-app</span>
+                <span class="text-xs font-mono text-text uppercase tracking-widest">turikaleprint-automated-layouting-web-app</span>
                 
                                     <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 ml-2">SOFTWARE & CYBERSECURITY</span>
                             </div>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
-                Photo Print Web App            </h1>
+                TurikalePrint: Automated Layouting Web App            </h1>
         </div>
 
         <!-- Right: Meta Data Grid -->
@@ -128,7 +128,7 @@
             </div>
             <div class="flex flex-col gap-1">
                 <span class="text-xs uppercase tracking-widest text-muted">Role / Level</span>
-                <span class="text-text font-medium">Intermediate</span>
+                <span class="text-text font-medium">Fullstack Developer</span>
             </div>
         </div>
     </div>
@@ -139,9 +139,7 @@
     <div class="max-w-6xl mx-auto">
         <div class="w-full aspect-[21/9] bg-surface border border-border rounded-2xl overflow-hidden relative group">
             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                            <div class="absolute inset-0 flex items-center justify-center text-muted">
-                    <i data-lucide="image" class="w-12 h-12 opacity-30"></i>
-                </div>
+                            <img src="/uploads/1788031743_Screenshot10.png" alt="TurikalePrint: Automated Layouting Web App" class="w-full h-full object-cover">
                     </div>
     </div>
 </section>
@@ -152,7 +150,7 @@
             <span class="text-xs font-mono uppercase tracking-widest text-muted">
                 Executive Summary            </span>
             <p class="text-2xl md:text-3xl text-text font-light leading-relaxed opacity-90">
-                A high-performance digital printing platform built to eliminate workflow bottlenecks. This project bridges the gap between customer orders and printing machines in real-time.            </p>
+                Platform cetak foto digital yang menjembatani pelanggan dan mesin produksi secara real-time. Fokus utamanya adalah memangkas waktu layouting (potong foto, ganti background, susun ukuran kertas) yang sebelumnya menjadi bottleneck karena dilakukan manual oleh operator.            </p>
         </div>
     </section>
 
@@ -168,7 +166,7 @@
                     Situation                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
-                <p>The printing shop was handling 500+ daily orders entirely through WhatsApp and manual spreadsheets, leading to a 15% error rate and lost revenue. Operators were overwhelmed by manual data entry, customers had no visibility over print status, and production machines had frequent idle times.</p>
+                <p>Saat mengikuti program magang nasional di TurikalePrint, saya menemukan bottleneck operasional yang sangat repetitif. Admin harus mengunduh foto pelanggan, menghapus background secara manual untuk pas foto, membuka Photoshop, mencari template ukuran kertas, lalu menyusun letak foto satu per satu. Proses ini tidak hanya lambat, tetapi juga menciptakan ketergantungan karena mewajibkan setiap admin memiliki skill Photoshop.</p>
             </div>
         </section>
     
@@ -183,7 +181,7 @@
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
                 <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
                     <i data-lucide="activity" class="w-6 h-6 text-muted"></i>
-                    <p class="text-text leading-relaxed">User interviews revealed that 40% of operator time was spent answering status questions. The core bottleneck was data flow between cashier and production rather than printing speed.</p>
+                    <p class="text-text leading-relaxed">Pekerjaan berulang ini memunculkan satu pertanyaan: Bagaimana cara meringkas alur kerja ini agar admin tanpa pengalaman editing atau desain grafis pun bisa mencetak foto dengan cepat? Analisis menunjukkan bahwa keharusan berpindah antara WhatsApp, browser, dan software desain yang berat (Photoshop) adalah sumber inefisiensinya.</p>
                 </div>
             </div>
         </section>
@@ -197,7 +195,7 @@
                     Action                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
-                <p>Designed a centralized queue management and automated layout generation system that acts as a single source of truth, capturing orders and distributing them to machine queues.</p>
+                <p>Saya membangun aplikasi web terpusat untuk menggantikan peran Photoshop dalam proses layouting. Sistem ini mengotomatisasi penyusunan ukuran foto ke dalam kanvas. Untuk menghilangkan kebutuhan editing eksternal, saya mengintegrasikan fitur manipulasi gambar langsung di dalam web—seperti penghapusan latar belakang dan penyuntingan manual menggunakan SDK pemrosesan gambar (imgly)—sehingga admin bisa mengedit dan menyusun foto dalam satu layar.</p>
             </div>
         </section>
     
@@ -211,7 +209,7 @@
         </div>
         
                     <div class="max-w-3xl mx-auto text-center text-muted font-light">
-                <p>Lightweight modular architecture with browser-side canvas rendering, asynchronous order submission, and local processing server to maintain sub-second response times.</p>
+                <p>Arsitektur modular yang sangat ringan dengan rendering kanvas berpusat di sisi browser (Client-side). Server lokal hanya bertugas mengelola antrean pesanan secara asinkron untuk memastikan respons sistem tetap instan tanpa membebani memori komputer toko.</p>
             </div>
         
         <!-- Minimalist Architecture / Circuit Diagram Layout -->
@@ -266,23 +264,23 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-mono text-sm">
                                     <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
                         <span class="text-xs text-muted">01</span>
-                        <span class="text-text font-medium">Automatic photo crop</span>
+                        <span class="text-text font-medium">Integrasi Imgly SDK</span>
                     </div>
                                     <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
                         <span class="text-xs text-muted">02</span>
-                        <span class="text-text font-medium">Background replacement</span>
+                        <span class="text-text font-medium">Client-side background removal</span>
                     </div>
                                     <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
                         <span class="text-xs text-muted">03</span>
-                        <span class="text-text font-medium">Photo alignment</span>
+                        <span class="text-text font-medium">Auto-layout kanvas cetak otomatis</span>
                     </div>
                                     <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
                         <span class="text-xs text-muted">04</span>
-                        <span class="text-text font-medium">Paper size selection</span>
+                        <span class="text-text font-medium">Drag-and-drop file upload</span>
                     </div>
                                     <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
                         <span class="text-xs text-muted">05</span>
-                        <span class="text-text font-medium">Print-ready layout generation</span>
+                        <span class="text-text font-medium">Manajemen antrean pesanan real-time.</span>
                     </div>
                             </div>
         </section>
@@ -332,31 +330,12 @@
                 </div>
                 <div class="md:col-span-8 flex flex-col gap-8">
                     <div class="pl-6 border-l-2 border-accent">
-                        <p class="text-muted leading-relaxed font-light">Keeping operator screens synchronized in real-time without heavy infrastructure costs on shared local network.</p>
+                        <p class="text-muted leading-relaxed font-light">Tantangan teknis terbesar adalah menghadirkan fitur editing manual (seperti alat kuas penghapus dan pengembali piksel) di atas kanvas web agar tetap stabil. Memproses manipulasi gambar beresolusi tinggi di sisi browser rentan menyebabkan crash atau memory leak, sehingga saya harus memastikan integrasi library image processing berjalan sangat optimal tanpa error.</p>
                     </div>
                 </div>
             </div>
         
         <!-- Engineering Decisions -->
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-                <div class="md:col-span-4 flex flex-col gap-2">
-                    <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                        08 / Rationale                    </span>
-                    <h2 class="text-3xl font-medium text-text">Engineering Decisions</h2>
-                </div>
-                <div class="md:col-span-8 flex flex-col gap-8">
-                                            <div class="bg-surface border border-border p-8 rounded-2xl">
-                            <h3 class="text-lg font-mono text-text mb-4">Why PHP Native over Laravel?</h3>
-                            <p class="text-muted leading-relaxed font-light">
-                                The client&#039;s local server had limited memory resources. A custom micro-framework kept memory footprint under 2MB while maintaining clear separation of concerns.                            </p>
-                        </div>
-                                            <div class="bg-surface border border-border p-8 rounded-2xl">
-                            <h3 class="text-lg font-mono text-text mb-4">Why Polling over WebSockets?</h3>
-                            <p class="text-muted leading-relaxed font-light">
-                                Given local network constraints and lightweight deployment, an optimized HTTP polling endpoint against indexed timestamps kept CPU usage below 5%.                            </p>
-                        </div>
-                                    </div>
-            </div>
         
     </section>
 
@@ -374,20 +353,20 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="flex flex-col items-center text-center gap-2">
                 <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">40%</span>
-                <span class="text-sm font-mono text-muted uppercase tracking-widest">Faster Processing</span>
+                <span class="text-sm font-mono text-muted uppercase tracking-widest">Proses lebih cepat</span>
             </div>
             <div class="flex flex-col items-center text-center gap-2">
                 <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">&lt;1%</span>
-                <span class="text-sm font-mono text-muted uppercase tracking-widest">Error Rate</span>
+                <span class="text-sm font-mono text-muted uppercase tracking-widest">Kesalahan cetak</span>
             </div>
             <div class="flex flex-col items-center text-center gap-2">
                 <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">100%</span>
-                <span class="text-sm font-mono text-muted uppercase tracking-widest">Digitalized</span>
+                <span class="text-sm font-mono text-muted uppercase tracking-widest">Alur kerja digital</span>
             </div>
         </div>
         
                     <p class="text-center text-lg text-muted font-light max-w-2xl mx-auto mt-4">
-                The system successfully eliminated paper trails, reduced customer wait times, and gave management clear visibility into daily production metrics.            </p>
+                Aplikasi berhasil mengeliminasi ketergantungan pada Photoshop. Admin toko kini bisa memproses layouting dan menghapus latar belakang foto langsung dari web, yang memangkas waktu tunggu pelanggan secara signifikan dan memperlancar alur produksi ke mesin cetak.            </p>
             </section>
 
     <!-- 13. LESSONS & 14. ROADMAP -->
@@ -404,11 +383,11 @@
                     <ul class="flex flex-col gap-4 text-muted font-light">
                                                     <li class="flex gap-4">
                                 <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i>
-                                <span>Don&#039;t overengineer features users don&#039;t need.</span>
+                                <span>Fokus selesaikan masalah operasional harian kasir, hindari membangun fitur kompleks yang tidak mereka butuhkan.</span>
                             </li>
                                                     <li class="flex gap-4">
                                 <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i>
-                                <span>Always index columns used in polling queries.</span>
+                                <span>Optimasi garbage collection pada JS Canvas sangat penting untuk mencegah lambatnya browser saat mengedit foto resolusi tinggi.</span>
                             </li>
                                             </ul>
                 </div>
@@ -424,11 +403,11 @@
                     <ul class="flex flex-col gap-4 text-muted font-light">
                                                     <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5 text-muted"></i>
-                                <span>Integrate AI for automated crop detection.</span>
+                                <span>Migrasi database bertahap ke layanan cloud agar pemilik bisa memantau pesanan jarak jauh.</span>
                             </li>
                                                     <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
                                 <i data-lucide="arrow-up-right" class="w-5 h-5 text-muted"></i>
-                                <span>Migrate to a scalable cloud instance (AWS/GCP).</span>
+                                <span>Menambahkan AI deteksi wajah untuk otomatisasi cropping pas foto.</span>
                             </li>
                                             </ul>
                 </div>
@@ -438,18 +417,6 @@
 </article>
 
 <!-- 15. NEXT PROJECT -->
-    <section class="border-t border-border bg-surface/30">
-        <a href="/projects/turikaleprint" class="group block max-w-5xl mx-auto px-6 py-32 text-center cursor-pointer">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest block mb-6">Up Next</span>
-            <h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-text group-hover:text-accent transition-colors duration-500">
-                TurikalePrint            </h2>
-            <div class="mt-8 flex justify-center opacity-0 group-hover:opacity-100 group-hover:translate-y-2 transition-all duration-500">
-                <div class="flex items-center gap-2 text-sm font-mono text-accent">
-                    View Case Study <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                </div>
-            </div>
-        </a>
-    </section>
     </main>
 
     <!-- Footer Component -->

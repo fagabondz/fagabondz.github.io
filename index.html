@@ -120,13 +120,16 @@
     <!-- Main Content -->
     <main class="flex-grow flex flex-col">
         <!-- views/home/index.php -->
+
 <div class="max-w-5xl mx-auto px-6 py-24 md:py-32 flex flex-col gap-32">
     
     <!-- Hero Section -->
     <section id="hero" class="flex flex-col">
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
-            I build resilient systems.<br>
-            <span class="text-muted font-medium">Software Engineer.</span>
+            <span data-id="I build resilient systems." data-en="I build resilient systems.">
+                I build resilient systems.            </span><br>
+            <span class="text-muted font-medium" data-id="Software Engineer." data-en="Software Engineer.">
+                Software Engineer.            </span>
         </h1>
     </section>
 
@@ -150,7 +153,8 @@
                                                             </div>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors">TurikalePrint: Automated Layouting Web App</h3>
+                            <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors" data-id="TurikalePrint: Automated Layouting Web App" data-en="TurikalePrint: Automated Layouting Web App">
+                                TurikalePrint: Automated Layouting Web App                            </h3>
                             <span class="text-sm font-mono text-muted">Fullstack Developer / 2026</span>
                         </div>
                     </a>
@@ -214,7 +218,7 @@
                                     </div>
     </section>
 
-    <!-- Skills -->
+    <!-- Skills / Core Stack -->
     <section id="skills" class="flex flex-col gap-8">
         <div class="flex items-center gap-4">
             <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Keahlian Utama" data-en="03 / Core Stack">03 / Keahlian Utama</span>
@@ -240,7 +244,7 @@
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
-        <p class="text-lg md:text-2xl text-text leading-relaxed max-w-3xl font-light opacity-90">
+        <p class="text-lg md:text-2xl text-text leading-relaxed max-w-3xl font-light opacity-90" data-id="Saya mengubah masalah dunia nyata menjadi solusi perangkat lunak yang skalabel. Pendekatan saya didasarkan pada analisis mendalam sebelum menulis kode, meminimalkan kompleksitas, dan iterasi tanpa henti. Setiap baris kode yang saya tulis ditujukan untuk menyelesaikan masalah, bukan sekadar mengikuti tren teknologi terbaru." data-en="I turn real-world bottlenecks into resilient, scalable software systems. My engineering philosophy centers on deep analysis prior to coding, minimizing accidental complexity, and relentless iteration.">
             Saya mengubah masalah dunia nyata menjadi solusi perangkat lunak yang skalabel. Pendekatan saya didasarkan pada analisis mendalam sebelum menulis kode, meminimalkan kompleksitas, dan iterasi tanpa henti. Setiap baris kode yang saya tulis ditujukan untuk menyelesaikan masalah, bukan sekadar mengikuti tren teknologi terbaru.        </p>
         
         <div class="mt-6">
@@ -362,20 +366,32 @@
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
 <footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
-    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+        
+        <!-- Left: Headline & Direct Contact -->
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something resilient?">
                 Ready to build something?            </span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
                 <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
                     Let&#039;s talk                </span>
+                <span class="text-muted/60">• contact@engineeringportfolio.com</span>
             </a>
         </div>
         
-        <div class="flex items-center gap-6 text-xs">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
+        <!-- Right: Pure Minimalist Lucide Icon Badges -->
+        <div class="flex items-center gap-3">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="LinkedIn Profile" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                                        <a href="mailto:contact@engineeringportfolio.com" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="Send Email" title="Email">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                </a>
                     </div>
+
     </div>
 </footer>
     <!-- Module Initialization Scripts -->

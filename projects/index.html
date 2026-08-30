@@ -159,7 +159,8 @@
                                                     </div>
                     </div>
                     <div class="flex flex-col gap-1">
-                        <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors">TurikalePrint: Automated Layouting Web App</h3>
+                        <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors" data-id="TurikalePrint: Automated Layouting Web App" data-en="TurikalePrint: Automated Layouting Web App">
+                            TurikalePrint: Automated Layouting Web App                        </h3>
                         <span class="text-sm font-mono text-muted">Fullstack Developer / 2026</span>
                     </div>
                 </a>
@@ -217,20 +218,32 @@
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
 <footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
-    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+        
+        <!-- Left: Headline & Direct Contact -->
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something resilient?">
                 Ready to build something?            </span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
                 <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
                     Let&#039;s talk                </span>
+                <span class="text-muted/60">• contact@engineeringportfolio.com</span>
             </a>
         </div>
         
-        <div class="flex items-center gap-6 text-xs">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
+        <!-- Right: Pure Minimalist Lucide Icon Badges -->
+        <div class="flex items-center gap-3">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="LinkedIn Profile" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                                        <a href="mailto:contact@engineeringportfolio.com" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="Send Email" title="Email">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                </a>
                     </div>
+
     </div>
 </footer>
     <!-- Module Initialization Scripts -->

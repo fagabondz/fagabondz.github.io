@@ -121,7 +121,7 @@
     <main class="flex-grow flex flex-col">
         <!-- views/about/index.php -->
 
-<div class="max-w-4xl mx-auto px-6 py-24 md:py-32 flex flex-col gap-32">
+<div class="max-w-4xl mx-auto px-6 py-24 md:py-32 flex flex-col gap-28">
     
     <!-- Hero Section -->
     <section class="flex flex-col gap-6">
@@ -130,91 +130,179 @@
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         <h1 class="text-5xl md:text-7xl font-bold tracking-tighter text-text leading-[1.1]">
-            Engineering Is Not<br>
-            <span class="text-muted font-medium">Only About Code.</span>
+            <span data-id="Rekayasa Sistem." data-en="Engineering Systems.">Rekayasa Sistem.</span><br>
+            <span class="text-muted font-medium" data-id="Fokus & Skalabilitas." data-en="Resilience & Scale.">Fokus & Skalabilitas.</span>
         </h1>
     </section>
 
-    <!-- My Journey -->
-    <section class="flex flex-col gap-8">
-        <div class="flex items-center gap-4 mb-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Perjalanan Karir" data-en="01 / The Journey">01 / Perjalanan Karir</span>
+    <!-- 01 / Summary (1 Concise Recruiter-Friendly Paragraph) -->
+    <section class="flex flex-col gap-6">
+        <div class="flex items-center gap-4 mb-1">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Ringkasan Profil" data-en="01 / Executive Summary">01 / Ringkasan Profil</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
-        <div class="flex flex-col gap-6 text-lg md:text-xl text-muted leading-relaxed font-light opacity-90 max-w-3xl">
-                            <p>Perjalanan saya tidak dimulai dengan keinginan kuat untuk menulis kode. Ia bermula dari rasa ingin tahu yang sederhana tentang bagaimana sistem bekerja bersama di balik layar. Mulai dari membongkar script sederhana untuk memahami logikanya, hingga memetakan bagaimana data berpindah melintasi jaringan lokal. Saya selalu terpesona oleh arsitektur teknologi yang tak terlihat.</p>
-                                        <p>Seiring berjalannya waktu, saya menyadari bahwa bahasa pemrograman dan protokol jaringan hanyalah alat. Keajaiban sebenarnya terjadi ketika Anda menggunakan alat-alat tersebut untuk merancang solusi yang menghilangkan gesekan dari kehidupan sehari-hari atau operasi bisnis seseorang.</p>
-                                        <p class="text-text font-normal">Saya tidak hanya menulis kode untuk membangun fitur; saya menganalisis masalah, merancang arsitektur yang andal, mempertimbangkan batasan infrastruktur, dan mengimplementasikan solusi yang skalabel.</p>
-                    </div>
+        <div class="bg-surface/50 border border-border p-8 rounded-2xl">
+            <p class="text-lg md:text-xl text-text leading-relaxed font-light opacity-95" data-id="Saya adalah Software Engineer dengan spesialisasi dalam merancang arsitektur sistem yang andal, backend berkinerja tinggi, dan otomatisasi alur kerja digital. Pendekatan saya didasarkan pada analisis mendalam sebelum menulis kode—meminimalkan kompleksitas teknis serta membangun solusi yang terukur dan berdampak nyata bagi operasional bisnis." data-en="I am a Software Engineer specializing in resilient system architecture, high-performance backends, and digital workflow automation. My engineering philosophy centers on deep analysis prior to coding—minimizing accidental complexity while delivering measurable, production-grade business outcomes.">
+                Saya adalah Software Engineer dengan spesialisasi dalam merancang arsitektur sistem yang andal, backend berkinerja tinggi, dan otomatisasi alur kerja digital. Pendekatan saya didasarkan pada analisis mendalam sebelum menulis kode—meminimalkan kompleksitas teknis serta membangun solusi yang terukur dan berdampak nyata bagi operasional bisnis.
+            </p>
+        </div>
     </section>
 
-    <!-- Engineering Principles -->
-            <section class="flex flex-col gap-8">
-            <div class="flex items-center gap-4 mb-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Prinsip Engineering" data-en="02 / Principles">02 / Prinsip Engineering</span>
-                <div class="h-[1px] flex-grow bg-border"></div>
-            </div>
+    <!-- 02 / Core Stack (Scannable Bullet Points) -->
+    <section class="flex flex-col gap-8">
+        <div class="flex items-center gap-4 mb-1">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Keahlian Utama (Core Stack)" data-en="02 / Core Technical Stack">02 / Keahlian Utama (Core Stack)</span>
+            <div class="h-[1px] flex-grow bg-border"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-mono text-sm">
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                                    <div class="flex flex-col gap-3">
-                        <h3 class="text-lg font-medium text-text">Problem First.</h3>
-                        <p class="text-sm text-muted leading-relaxed">Teknologi hanyalah alat. Sebelum menulis kode, saya fokus memahami akar masalah, kebutuhan pengguna, dan batasan bisnis secara mendalam.</p>
-                    </div>
-                                    <div class="flex flex-col gap-3">
-                        <h3 class="text-lg font-medium text-text">Think Before Build.</h3>
-                        <p class="text-sm text-muted leading-relaxed">Arsitektur adalah segalanya. Waktu yang dihabiskan untuk merencanakan struktur data dan logika akan menghemat ratusan jam debugging di kemudian hari.</p>
-                    </div>
-                                    <div class="flex flex-col gap-3">
-                        <h3 class="text-lg font-medium text-text">Continuous Improvement.</h3>
-                        <p class="text-sm text-muted leading-relaxed">Sistem tidak pernah benar-benar selesai. Ia selalu bisa dioptimasi, direfaktor, dan dibuat lebih andal seiring berjalannya waktu dan umpan balik pengguna.</p>
-                    </div>
-                                    <div class="flex flex-col gap-3">
-                        <h3 class="text-lg font-medium text-text">Simple Is Powerful.</h3>
-                        <p class="text-sm text-muted leading-relaxed">Kompleksitas adalah musuh keandalan. Saya berusaha membangun sistem yang mudah dipahami dan dikelola tanpa menambahkan kerumitan yang tak perlu.</p>
-                    </div>
-                            </div>
-        </section>
-    
-    <!-- Timeline -->
-            <section class="flex flex-col gap-8">
-            <div class="flex items-center gap-4 mb-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Linimasa" data-en="03 / Timeline">03 / Linimasa</span>
-                <div class="h-[1px] flex-grow bg-border"></div>
+            <!-- Backend & System Architecture -->
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-text font-bold">
+                    <i data-lucide="server" class="w-5 h-5 text-accent"></i>
+                    <span data-id="Backend & Arsitektur" data-en="Backend & Architecture">Backend & Arsitektur</span>
+                </div>
+                <ul class="space-y-2 text-xs text-muted font-sans">
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">PHP & Laravel / Custom MVC Frameworks</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">RESTful API Design & Asynchronous Queues</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Role-Based Access Control (RBAC) & Security</span>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Database & Storage -->
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-text font-bold">
+                    <i data-lucide="database" class="w-5 h-5 text-accent"></i>
+                    <span data-id="Basis Data & Optimasi" data-en="Database & Performance">Basis Data & Optimasi</span>
+                </div>
+                <ul class="space-y-2 text-xs text-muted font-sans">
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">MySQL & Relational Data Modeling</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Index Tuning & Sub-second Query Optimization</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Data Integrity & Transactional Consistency</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Infrastructure & DevOps -->
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-text font-bold">
+                    <i data-lucide="terminal" class="w-5 h-5 text-accent"></i>
+                    <span data-id="Infrastruktur & Jaringan" data-en="Infrastructure & Systems">Infrastruktur & Jaringan</span>
+                </div>
+                <ul class="space-y-2 text-xs text-muted font-sans">
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Linux Server Administration & Bash Scripting</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Docker Containerization & Deployment</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Network Infrastructure (Cisco CCNA, MikroTik)</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Frontend & Client Experience -->
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
+                <div class="flex items-center gap-3 text-text font-bold">
+                    <i data-lucide="layout" class="w-5 h-5 text-accent"></i>
+                    <span data-id="Frontend & Antarmuka" data-en="Frontend & Tooling">Frontend & Antarmuka</span>
+                </div>
+                <ul class="space-y-2 text-xs text-muted font-sans">
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Vanilla JavaScript (ES6+), DOM & Canvas APIs</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Tailwind CSS & Mobile-First Responsive Design</span>
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accent"></span>
+                        <span class="text-text">Static Site Generators (SSG) & Static Assets</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 03 / Experience Highlights (Scannable Bullet Points) -->
+    <section class="flex flex-col gap-8">
+        <div class="flex items-center gap-4 mb-1">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Pengalaman & Pencapaian" data-en="03 / Experience & Key Impacts">03 / Pengalaman & Pencapaian</span>
+            <div class="h-[1px] flex-grow bg-border"></div>
+        </div>
+
+        <div class="space-y-4 font-mono text-sm">
             
-            <ul class="flex flex-col text-sm font-mono text-muted">
-                                    <li class="py-4 border-b border-border flex flex-col md:flex-row md:items-center gap-2 md:gap-8 hover:bg-surface/30 transition-colors px-2 -mx-2 rounded">
-                        <span class="text-text opacity-70 w-16">2023</span>
-                        <span class="text-text font-medium flex-grow">Fullstack Engineering</span>
-                        <span class="text-xs">Building scalable web applications</span>
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <h3 class="text-base font-bold text-text" data-id="Software Engineering & Digitalization" data-en="Software Engineering & Digitalization">Software Engineering & Digitalization</h3>
+                    <span class="text-xs text-accent bg-white/5 px-2.5 py-1 rounded border border-border w-fit">2023 - Present</span>
+                </div>
+                <ul class="space-y-2 text-xs text-muted font-sans mt-1">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                        <span data-id="Membangun sistem otomasi workflow percetakan yang mereduksi error rate hingga <1% dan mengeliminasi proses manual berbasis spreadsheet." data-en="Built printing workflow automation systems reducing operational error rates to <1% and eliminating manual spreadsheet tracking.">Membangun sistem otomasi workflow percetakan yang mereduksi error rate hingga <1% dan mengeliminasi proses manual berbasis spreadsheet.</span>
                     </li>
-                                    <li class="py-4 border-b border-border flex flex-col md:flex-row md:items-center gap-2 md:gap-8 hover:bg-surface/30 transition-colors px-2 -mx-2 rounded">
-                        <span class="text-text opacity-70 w-16">2022</span>
-                        <span class="text-text font-medium flex-grow">Network Infrastructure</span>
-                        <span class="text-xs">Routing, switching, and security</span>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                        <span data-id="Merancang Static Site Generator (SSG) berbasis PHP native dengan Single Source of Truth MySQL dan zero-dependency production builds." data-en="Architected a native PHP Static Site Generator (SSG) with MySQL as single source of truth and zero-dependency production output.">Merancang Static Site Generator (SSG) berbasis PHP native dengan Single Source of Truth MySQL dan zero-dependency production builds.</span>
                     </li>
-                                    <li class="py-4 border-b border-border flex flex-col md:flex-row md:items-center gap-2 md:gap-8 hover:bg-surface/30 transition-colors px-2 -mx-2 rounded">
-                        <span class="text-text opacity-70 w-16">2021</span>
-                        <span class="text-text font-medium flex-grow">Systems Automation</span>
-                        <span class="text-xs">Optimizing workflows &amp; servers</span>
+                </ul>
+            </div>
+
+            <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                    <h3 class="text-base font-bold text-text" data-id="Network & Systems Engineering" data-en="Network & Systems Engineering">Network & Systems Engineering</h3>
+                    <span class="text-xs text-accent bg-white/5 px-2.5 py-1 rounded border border-border w-fit">2021 - 2023</span>
+                </div>
+                <ul class="space-y-2 text-xs text-muted font-sans mt-1">
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                        <span data-id="Mengonfigurasi infrastruktur jaringan bertingkat, routing/switching terisolasi (VLAN), dan pengamanan firewall server lokal." data-en="Configured multi-tier network topologies, isolated VLAN routing/switching, and local firewall security policies.">Mengonfigurasi infrastruktur jaringan bertingkat, routing/switching terisolasi (VLAN), dan pengamanan firewall server lokal.</span>
                     </li>
-                                    <li class="py-4 border-b border-border flex flex-col md:flex-row md:items-center gap-2 md:gap-8 hover:bg-surface/30 transition-colors px-2 -mx-2 rounded">
-                        <span class="text-text opacity-70 w-16">2020</span>
-                        <span class="text-text font-medium flex-grow">The Beginning</span>
-                        <span class="text-xs">Diving into logic and syntax</span>
+                    <li class="flex items-start gap-2">
+                        <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                        <span data-id="Memelihara server operasional berdaya rendah dengan uptime konsisten dan beban memori minimal (<2MB micro-framework footprint)." data-en="Maintained lightweight on-premise application servers with high uptime and minimal memory overhead (<2MB footprint).">Memelihara server operasional berdaya rendah dengan uptime konsisten dan beban memori minimal (<2MB micro-framework footprint).</span>
                     </li>
-                            </ul>
-        </section>
-    
-    <!-- Certifications / Credentials -->
-    <section id="certifications" class="flex flex-col gap-10">
-        <div class="flex items-center gap-4 mb-2">
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 04 / Certifications / Credentials -->
+    <section id="certifications" class="flex flex-col gap-8">
+        <div class="flex items-center gap-4 mb-1">
             <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Kredensial & Sertifikasi" data-en="04 / Credentials & Certifications">04 / Kredensial & Sertifikasi</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
                                                                     <div onclick="openPublicCertModal('/uploads/certifications/cert_20260829_204004_2b1495ad.pdf', 'Google Cybersecurity', 'Google', '2026', '', true)" class="group flex flex-col gap-3 cursor-pointer">
                         <div class="relative w-full aspect-[3/4] rounded-xl bg-surface border border-border overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -257,78 +345,76 @@
                                     </div>
     </section>
 
-    <!-- Let's Connect (Contact Section) -->
+    <!-- 05 / Let's Connect (Contact Section) -->
     <section id="connect" class="flex flex-col gap-8 pt-6 border-t border-border">
-        <div class="flex items-center gap-4 mb-2">
+        <div class="flex items-center gap-4 mb-1">
             <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="05 / Mari Terhubung" data-en="05 / Let's Connect">05 / Mari Terhubung</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
 
-        <div class="flex flex-col gap-3">
+        <div class="flex flex-col gap-2">
             <h2 class="text-3xl md:text-5xl font-bold tracking-tighter text-text">
-                Let&#039;s Build Something<br>
-                <span class="text-muted font-medium">Resilient Together.</span>
+                <span data-id="Membangun Kolaborasi." data-en="Let's Build Something.">Membangun Kolaborasi.</span><br>
+                <span class="text-muted font-medium" data-id="Tangguh Bersama." data-en="Resilient Together.">Tangguh Bersama.</span>
             </h2>
-                            <p class="text-base md:text-lg text-muted font-light leading-relaxed max-w-2xl mt-1">
-                    Whether you have a question about system architecture, software engineering, or a potential collaboration, feel free to reach out.                </p>
-                    </div>
+            <p class="text-sm md:text-base text-muted font-light leading-relaxed max-w-xl mt-1" data-id="Terbuka untuk diskusi mengenai arsitektur sistem, peluang rekayasa perangkat lunak, dan proyek rekayasa digital." data-en="Open for inquiries regarding system architecture, software engineering opportunities, and technical collaborations.">
+                Terbuka untuk diskusi mengenai arsitektur sistem, peluang rekayasa perangkat lunak, dan proyek rekayasa digital.
+            </p>
+        </div>
 
-        <!-- Communication Channels Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+        <!-- Minimalist Recruiter Communication Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
             
             <!-- Email -->
-            <a href="mailto:contact@engineeringportfolio.com" class="group bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6 hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300">
-                <div class="flex items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
+            <a href="mailto:contact@engineeringportfolio.com" class="group bg-surface border border-border p-5 rounded-xl flex items-center justify-between hover:border-accent/40 hover:bg-white/5 transition-all duration-200">
+                <div class="flex items-center gap-3.5">
+                    <div class="w-9 h-9 rounded-lg bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
                     </div>
-                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Kirim Email" data-en="Direct Mail">Kirim Email</span>
+                    <div class="flex flex-col font-mono">
+                        <span class="text-[11px] text-muted uppercase tracking-widest" data-id="Email Langsung" data-en="Direct Email">Email Langsung</span>
+                        <span class="text-xs font-medium text-text group-hover:text-accent transition-colors">contact@engineeringportfolio.com</span>
+                    </div>
                 </div>
-                <div class="flex flex-col gap-0.5">
-                    <span class="text-xs font-mono text-muted">Email</span>
-                    <span class="text-base font-medium text-text group-hover:text-accent transition-colors break-all">contact@engineeringportfolio.com</span>
-                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-muted group-hover:text-text transition-colors"></i>
             </a>
 
             <!-- GitHub -->
-                                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6 hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300">
-                    <div class="flex items-center justify-between">
-                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
-                            <i data-lucide="github" class="w-5 h-5"></i>
+                                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-5 rounded-xl flex items-center justify-between hover:border-accent/40 hover:bg-white/5 transition-all duration-200">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-9 h-9 rounded-lg bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                            <i data-lucide="github" class="w-4 h-4"></i>
                         </div>
-                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Kode Sumber" data-en="Source Code">Kode Sumber</span>
+                        <div class="flex flex-col font-mono">
+                            <span class="text-[11px] text-muted uppercase tracking-widest" data-id="Repositori Kode" data-en="Code Repositories">Repositori Kode</span>
+                            <span class="text-xs font-medium text-text group-hover:text-accent transition-colors">github.com/fagabondz</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-0.5">
-                        <span class="text-xs font-mono text-muted">GitHub</span>
-                        <span class="text-base font-medium text-text group-hover:text-accent transition-colors">github.com</span>
-                    </div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-muted group-hover:text-text transition-colors"></i>
                 </a>
             
             <!-- LinkedIn -->
-                                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6 hover:border-accent/40 hover:-translate-y-0.5 transition-all duration-300">
-                    <div class="flex items-center justify-between">
-                        <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="group bg-surface border border-border p-5 rounded-xl flex items-center justify-between hover:border-accent/40 hover:bg-white/5 transition-all duration-200">
+                    <div class="flex items-center gap-3.5">
+                        <div class="w-9 h-9 rounded-lg bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
+                            <i data-lucide="linkedin" class="w-4 h-4"></i>
                         </div>
-                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Jaringan Profesional" data-en="Professional Network">Jaringan Profesional</span>
+                        <div class="flex flex-col font-mono">
+                            <span class="text-[11px] text-muted uppercase tracking-widest" data-id="Profil Profesional" data-en="Professional Profile">Profil Profesional</span>
+                            <span class="text-xs font-medium text-text group-hover:text-accent transition-colors">linkedin.com</span>
+                        </div>
                     </div>
-                    <div class="flex flex-col gap-0.5">
-                        <span class="text-xs font-mono text-muted">LinkedIn</span>
-                        <span class="text-base font-medium text-text group-hover:text-accent transition-colors">linkedin.com/in</span>
-                    </div>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-muted group-hover:text-text transition-colors"></i>
                 </a>
             
             <!-- Location & Availability -->
-            <div class="bg-surface border border-border p-6 rounded-2xl flex flex-col justify-between gap-6">
-                <div class="flex items-center justify-between">
-                    <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text">
-                        <i data-lucide="map-pin" class="w-5 h-5"></i>
-                    </div>
-                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Ketersediaan" data-en="Availability">Ketersediaan</span>
+            <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-white/5 border border-border flex items-center justify-center text-text">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
                 </div>
-                <div class="flex flex-col gap-0.5">
-                    <span class="text-xs font-mono text-muted" data-id="Lokasi & Zona Waktu" data-en="Location & Timezone">Lokasi & Zona Waktu</span>
-                    <span class="text-base font-medium text-text">Indonesia (UTC+8 / UTC+7) • Remote</span>
+                <div class="flex flex-col font-mono">
+                    <span class="text-[11px] text-muted uppercase tracking-widest" data-id="Lokasi & Ketersediaan" data-en="Location & Availability">Lokasi & Ketersediaan</span>
+                    <span class="text-xs font-medium text-text">Indonesia • Remote / Relocation</span>
                 </div>
             </div>
 
@@ -447,20 +533,32 @@
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
 <footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
-    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+        
+        <!-- Left: Headline & Direct Contact -->
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something resilient?">
                 Ready to build something?            </span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
                 <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
                     Let&#039;s talk                </span>
+                <span class="text-muted/60">• contact@engineeringportfolio.com</span>
             </a>
         </div>
         
-        <div class="flex items-center gap-6 text-xs">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
+        <!-- Right: Pure Minimalist Lucide Icon Badges -->
+        <div class="flex items-center gap-3">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="LinkedIn Profile" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                                        <a href="mailto:contact@engineeringportfolio.com" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="Send Email" title="Email">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                </a>
                     </div>
+
     </div>
 </footer>
     <!-- Module Initialization Scripts -->

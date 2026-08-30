@@ -122,7 +122,7 @@
         <!-- views/projects/detail.php -->
 
 <!-- 1. HERO SECTION -->
-<section class="relative pt-32 pb-16 px-6">
+<section class="relative pt-32 pb-12 px-6">
     <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:items-end">
         
         <!-- Left: Project Title -->
@@ -134,7 +134,7 @@
                 
                                     <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 ml-2" data-id="SOFTWARE & CYBERSECURITY" data-en="SOFTWARE & CYBERSECURITY">SOFTWARE & CYBERSECURITY</span>
                             </div>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]" data-id="TurikalePrint: Automated Layouting Web App" data-en="TurikalePrint: Automated Layouting Web App">
                 TurikalePrint: Automated Layouting Web App            </h1>
         </div>
 
@@ -160,8 +160,31 @@
     </div>
 </section>
 
+<!-- 2. RECRUITER-FOCUSED METRICS / IMPACT BANNER (TOP POSITION) -->
+<section class="px-6 py-8">
+    <div class="max-w-6xl mx-auto bg-surface border border-border/80 rounded-2xl p-6 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-border">
+            <div class="flex flex-col items-center text-center gap-1.5 pt-4 md:pt-0">
+                <span class="text-4xl md:text-5xl font-bold tracking-tighter text-emerald-400">40%</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-wider" data-id="Proses lebih cepat" data-en="Faster Processing">
+                    Proses lebih cepat                </span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-1.5 pt-4 md:pt-0">
+                <span class="text-4xl md:text-5xl font-bold tracking-tighter text-blue-400">&lt;1%</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-wider" data-id="Kesalahan cetak" data-en="Error Rate">
+                    Kesalahan cetak                </span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-1.5 pt-4 md:pt-0">
+                <span class="text-4xl md:text-5xl font-bold tracking-tighter text-accent">100%</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-wider" data-id="Alur kerja digital" data-en="Digitalized Workflow">
+                    Alur kerja digital                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Hero Image -->
-<section class="px-6 pb-24">
+<section class="px-6 pb-16">
     <div class="max-w-6xl mx-auto">
         <div class="w-full aspect-[21/9] bg-surface border border-border rounded-2xl overflow-hidden relative group">
             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
@@ -170,20 +193,20 @@
     </div>
 </section>
 
-<!-- 2. PROJECT OVERVIEW -->
-    <section class="py-24 px-6 border-y border-border bg-surface/30">
+<!-- 3. PROJECT OVERVIEW -->
+    <section class="py-16 px-6 border-y border-border bg-surface/30">
         <div class="max-w-4xl mx-auto text-center space-y-4">
             <span class="text-xs font-mono uppercase tracking-widest text-muted" data-id="Ikhtisar Eksekutif" data-en="Executive Summary">
                 Ikhtisar Eksekutif            </span>
-            <p class="text-2xl md:text-3xl text-text font-light leading-relaxed opacity-90">
+            <p class="text-xl md:text-2xl text-text font-light leading-relaxed opacity-95" data-id="Platform cetak foto digital yang menjembatani pelanggan dan mesin produksi secara real-time. Fokus utamanya adalah memangkas waktu layouting (potong foto, ganti background, susun ukuran kertas) yang sebelumnya menjadi bottleneck karena dilakukan manual oleh operator." data-en="An automated layout generation and order queueing system engineered to eliminate cashier bottlenecks and manual spreadsheet errors in local printing businesses.">
                 Platform cetak foto digital yang menjembatani pelanggan dan mesin produksi secara real-time. Fokus utamanya adalah memangkas waktu layouting (potong foto, ganti background, susun ukuran kertas) yang sebelumnya menjadi bottleneck karena dilakukan manual oleh operator.            </p>
         </div>
     </section>
 
-<!-- CASE STUDY CONTENT (STAR vs MAKER'S STORY) -->
-<article class="py-32 px-6 space-y-32">
+<!-- 4. CORE STORY CONTENT (STAR vs MAKER'S STORY) -->
+<article class="py-24 px-6 space-y-24">
     
-    <!-- 3. THE PROBLEM (SITUATION vs THE SPARK) -->
+    <!-- Problem / The Spark -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
                 <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Situasi" data-en="01 / Situation">
@@ -192,11 +215,12 @@
                     Situation                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
-                <p>Saat mengikuti program magang nasional di TurikalePrint, saya menemukan bottleneck operasional yang sangat repetitif. Admin harus mengunduh foto pelanggan, menghapus background secara manual untuk pas foto, membuka Photoshop, mencari template ukuran kertas, lalu menyusun letak foto satu per satu. Proses ini tidak hanya lambat, tetapi juga menciptakan ketergantungan karena mewajibkan setiap admin memiliki skill Photoshop.</p>
+                <p data-id="Saat mengikuti program magang nasional di TurikalePrint, saya menemukan bottleneck operasional yang sangat repetitif. Admin harus mengunduh foto pelanggan, menghapus background secara manual untuk pas foto, membuka Photoshop, mencari template ukuran kertas, lalu menyusun letak foto satu per satu. Proses ini tidak hanya lambat, tetapi juga menciptakan ketergantungan karena mewajibkan setiap admin memiliki skill Photoshop." data-en="Operators were handling 500+ daily orders manually via WhatsApp and spreadsheets, resulting in a 15% error rate, frequent production delays, and customer frustration during peak hours.">
+                    Saat mengikuti program magang nasional di TurikalePrint, saya menemukan bottleneck operasional yang sangat repetitif. Admin harus mengunduh foto pelanggan, menghapus background secara manual untuk pas foto, membuka Photoshop, mencari template ukuran kertas, lalu menyusun letak foto satu per satu. Proses ini tidak hanya lambat, tetapi juga menciptakan ketergantungan karena mewajibkan setiap admin memiliki skill Photoshop.                </p>
             </div>
         </section>
     
-    <!-- 4. RESEARCH & ANALYSIS (TASK vs THE BLUEPRINT) -->
+    <!-- Research & Analysis / The Blueprint -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
                 <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Tugas & Analisis" data-en="02 / Task">
@@ -207,12 +231,13 @@
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
                 <div class="bg-surface border border-border p-6 rounded-xl flex flex-col gap-4">
                     <i data-lucide="activity" class="w-6 h-6 text-muted"></i>
-                    <p class="text-text leading-relaxed">Pekerjaan berulang ini memunculkan satu pertanyaan: Bagaimana cara meringkas alur kerja ini agar admin tanpa pengalaman editing atau desain grafis pun bisa mencetak foto dengan cepat? Analisis menunjukkan bahwa keharusan berpindah antara WhatsApp, browser, dan software desain yang berat (Photoshop) adalah sumber inefisiensinya.</p>
+                    <p class="text-text leading-relaxed" data-id="Pekerjaan berulang ini memunculkan satu pertanyaan: Bagaimana cara meringkas alur kerja ini agar admin tanpa pengalaman editing atau desain grafis pun bisa mencetak foto dengan cepat? Analisis menunjukkan bahwa keharusan berpindah antara WhatsApp, browser, dan software desain yang berat (Photoshop) adalah sumber inefisiensinya." data-en="Field analysis indicated that 40% of operator time was wasted answering order status inquiries. The primary bottleneck was uncoordinated order handoff between front-desk and printing machines.">
+                        Pekerjaan berulang ini memunculkan satu pertanyaan: Bagaimana cara meringkas alur kerja ini agar admin tanpa pengalaman editing atau desain grafis pun bisa mencetak foto dengan cepat? Analisis menunjukkan bahwa keharusan berpindah antara WhatsApp, browser, dan software desain yang berat (Photoshop) adalah sumber inefisiensinya.                    </p>
                 </div>
             </div>
         </section>
     
-    <!-- 5. SOLUTION (ACTION vs THE BUILD) -->
+    <!-- Solution / The Build -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
                 <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Tindakan & Solusi" data-en="03 / Action">
@@ -221,11 +246,12 @@
                     Action                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
-                <p>Saya membangun aplikasi web terpusat untuk menggantikan peran Photoshop dalam proses layouting. Sistem ini mengotomatisasi penyusunan ukuran foto ke dalam kanvas. Untuk menghilangkan kebutuhan editing eksternal, saya mengintegrasikan fitur manipulasi gambar langsung di dalam web—seperti penghapusan latar belakang dan penyuntingan manual menggunakan SDK pemrosesan gambar (imgly)—sehingga admin bisa mengedit dan menyusun foto dalam satu layar.</p>
+                <p data-id="Saya membangun aplikasi web terpusat untuk menggantikan peran Photoshop dalam proses layouting. Sistem ini mengotomatisasi penyusunan ukuran foto ke dalam kanvas. Untuk menghilangkan kebutuhan editing eksternal, saya mengintegrasikan fitur manipulasi gambar langsung di dalam web—seperti penghapusan latar belakang dan penyuntingan manual menggunakan SDK pemrosesan gambar (imgly)—sehingga admin bisa mengedit dan menyusun foto dalam satu layar." data-en="Architected an automated web-based canvas layouting engine with live print-ready PDF compilation and real-time job queue dispatching.">
+                    Saya membangun aplikasi web terpusat untuk menggantikan peran Photoshop dalam proses layouting. Sistem ini mengotomatisasi penyusunan ukuran foto ke dalam kanvas. Untuk menghilangkan kebutuhan editing eksternal, saya mengintegrasikan fitur manipulasi gambar langsung di dalam web—seperti penghapusan latar belakang dan penyuntingan manual menggunakan SDK pemrosesan gambar (imgly)—sehingga admin bisa mengedit dan menyusun foto dalam satu layar.                </p>
             </div>
         </section>
     
-    <!-- 6. SYSTEM ARCHITECTURE / SCHEMATIC -->
+    <!-- System Architecture / Schematic Diagram -->
     <section class="max-w-6xl mx-auto flex flex-col gap-12">
         <div class="flex flex-col gap-2 text-center items-center">
             <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Arsitektur Sistem" data-en="04 / Architecture">
@@ -235,11 +261,12 @@
         </div>
         
                     <div class="max-w-3xl mx-auto text-center text-muted font-light">
-                <p>Arsitektur modular yang sangat ringan dengan rendering kanvas berpusat di sisi browser (Client-side). Server lokal hanya bertugas mengelola antrean pesanan secara asinkron untuk memastikan respons sistem tetap instan tanpa membebani memori komputer toko.</p>
+                <p data-id="Arsitektur modular yang sangat ringan dengan rendering kanvas berpusat di sisi browser (Client-side). Server lokal hanya bertugas mengelola antrean pesanan secara asinkron untuk memastikan respons sistem tetap instan tanpa membebani memori komputer toko." data-en="Modular lightweight architecture leveraging client-side Canvas rendering with asynchronous submission to a local processing server, ensuring sub-second response times.">
+                    Arsitektur modular yang sangat ringan dengan rendering kanvas berpusat di sisi browser (Client-side). Server lokal hanya bertugas mengelola antrean pesanan secara asinkron untuk memastikan respons sistem tetap instan tanpa membebani memori komputer toko.                </p>
             </div>
         
-        <!-- Minimalist Architecture / Circuit Diagram Layout -->
-        <div class="w-full bg-surface/50 border border-border rounded-2xl p-8 md:p-16 flex items-center justify-center overflow-x-auto">
+        <!-- Minimalist Architecture / Circuit Flow -->
+        <div class="w-full bg-surface/50 border border-border rounded-2xl p-8 md:p-12 flex items-center justify-center overflow-x-auto">
             <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 font-mono text-sm">
                 <!-- Input / Sensor / Client -->
                 <div class="flex flex-col items-center gap-3">
@@ -281,190 +308,153 @@
         </div>
     </section>
 
-    <!-- 7. DEVELOPMENT PROCESS / IMPLEMENTATION HIGHLIGHTS -->
-            <section class="max-w-5xl mx-auto flex flex-col gap-12">
-            <div class="flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="05 / Eksekusi Teknis" data-en="05 / Execution">
-                    05 / Eksekusi Teknis                </span>
-                <h2 class="text-3xl font-medium text-text" data-id="Sorotan Implementasi" data-en="Implementation Highlights">
-                    Sorotan Implementasi                </h2>
-            </div>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-mono text-sm">
-                                    <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
-                        <span class="text-xs text-muted">01</span>
-                        <span class="text-text font-medium">Integrasi Imgly SDK</span>
-                    </div>
-                                    <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
-                        <span class="text-xs text-muted">02</span>
-                        <span class="text-text font-medium">Client-side background removal</span>
-                    </div>
-                                    <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
-                        <span class="text-xs text-muted">03</span>
-                        <span class="text-text font-medium">Auto-layout kanvas cetak otomatis</span>
-                    </div>
-                                    <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
-                        <span class="text-xs text-muted">04</span>
-                        <span class="text-text font-medium">Drag-and-drop file upload</span>
-                    </div>
-                                    <div class="bg-surface border border-border p-5 rounded-xl flex items-center gap-4">
-                        <span class="text-xs text-muted">05</span>
-                        <span class="text-text font-medium">Manajemen antrean pesanan real-time.</span>
-                    </div>
-                            </div>
-        </section>
-    
-    <!-- 8. TECHNOLOGY & TOOLS STACK -->
+    <!-- 5. IMPLEMENTATION HIGHLIGHTS & TECH STACK -->
     <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
         <div class="md:col-span-4 flex flex-col gap-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="06 / Tumpukan Teknologi" data-en="06 / Tech Stack">
-                06 / Tumpukan Teknologi            </span>
-            <h2 class="text-3xl font-medium text-text" data-id="Teknologi" data-en="Technology">
-                Teknologi            </h2>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="05 / Stack Teknologi" data-en="05 / Tech Stack">
+                05 / Stack Teknologi            </span>
+            <h2 class="text-3xl font-medium text-text" data-id="Teknologi & Alat" data-en="Technologies & Stack">Teknologi & Alat</h2>
         </div>
-        <div class="md:col-span-8 flex flex-wrap gap-4">
-                                                <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
-                        <i data-lucide="server" class="w-5 h-5 text-muted"></i>
-                        <span class="text-sm font-mono text-text">PHP</span>
+        <div class="md:col-span-8 flex flex-wrap gap-3">
+                                                <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="server" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">PHP</span>
                     </div>
-                                    <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
-                        <i data-lucide="code" class="w-5 h-5 text-muted"></i>
-                        <span class="text-sm font-mono text-text">JavaScript</span>
+                                    <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="code" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">JavaScript</span>
                     </div>
-                                    <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
-                        <i data-lucide="database" class="w-5 h-5 text-muted"></i>
-                        <span class="text-sm font-mono text-text">MySQL</span>
+                                    <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="database" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">MySQL</span>
                     </div>
-                                    <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
-                        <i data-lucide="layout" class="w-5 h-5 text-muted"></i>
-                        <span class="text-sm font-mono text-text">Tailwind CSS</span>
+                                    <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="layout" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">Tailwind CSS</span>
                     </div>
-                                    <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
-                        <i data-lucide="git-branch" class="w-5 h-5 text-muted"></i>
-                        <span class="text-sm font-mono text-text">Git</span>
+                                    <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="git-branch" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">Git</span>
                     </div>
                                     </div>
     </section>
 
-    <!-- 9. CHALLENGES & 10. DECISIONS -->
-    <section class="max-w-5xl mx-auto flex flex-col gap-16">
+    <!-- 6. GALLERY -->
+    
+    <!-- 7. RECRUITER-FRIENDLY ACCORDION: CHALLENGES, DECISIONS, LESSONS & ROADMAP -->
+    <section class="max-w-5xl mx-auto flex flex-col gap-6 pt-6 border-t border-border">
         
-        <!-- Challenges -->
-                    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-                <div class="md:col-span-4 flex flex-col gap-2">
-                    <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="07 / Hambatan" data-en="07 / Obstacles">
-                        07 / Hambatan                    </span>
-                    <h2 class="text-3xl font-medium text-text" data-id="Tantangan Teknis" data-en="Challenges">
-                        Tantangan Teknis                    </h2>
-                </div>
-                <div class="md:col-span-8 flex flex-col gap-8">
-                    <div class="pl-6 border-l-2 border-accent">
-                        <p class="text-muted leading-relaxed font-light">Tantangan teknis terbesar adalah menghadirkan fitur editing manual (seperti alat kuas penghapus dan pengembali piksel) di atas kanvas web agar tetap stabil. Memproses manipulasi gambar beresolusi tinggi di sisi browser rentan menyebabkan crash atau memory leak, sehingga saya harus memastikan integrasi library image processing berjalan sangat optimal tanpa error.</p>
+        <div class="flex items-center gap-4 mb-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="07 / Detail Teknis & Retrospektif" data-en="07 / Technical Deep-Dive & Retrospective">07 / Detail Teknis & Retrospektif</span>
+            <div class="h-[1px] flex-grow bg-border"></div>
+        </div>
+
+        <div class="space-y-4 font-mono text-sm">
+            
+            <!-- Accordion Item 1: Challenges & Obstacles -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="alert-circle" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Tantangan & Hambatan Teknis" data-en="Challenges & Technical Obstacles">Tantangan & Hambatan Teknis</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 text-muted font-sans font-light leading-relaxed text-sm">
+                        <p class="mt-4" data-id="Tantangan teknis terbesar adalah menghadirkan fitur editing manual (seperti alat kuas penghapus dan pengembali piksel) di atas kanvas web agar tetap stabil. Memproses manipulasi gambar beresolusi tinggi di sisi browser rentan menyebabkan crash atau memory leak, sehingga saya harus memastikan integrasi library image processing berjalan sangat optimal tanpa error." data-en="Delivering smooth manual canvas editing (pixel restoration &amp; brush eraser) in the browser without memory leaks when processing high-resolution raw images.">
+                            Tantangan teknis terbesar adalah menghadirkan fitur editing manual (seperti alat kuas penghapus dan pengembali piksel) di atas kanvas web agar tetap stabil. Memproses manipulasi gambar beresolusi tinggi di sisi browser rentan menyebabkan crash atau memory leak, sehingga saya harus memastikan integrasi library image processing berjalan sangat optimal tanpa error.                        </p>
                     </div>
-                </div>
-            </div>
-        
-        <!-- Engineering Decisions -->
-        
+                </details>
+            
+            <!-- Accordion Item 2: Engineering Decisions -->
+            
+            <!-- Accordion Item 3: Lessons Learned -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="book-open" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Pembelajaran & Catatan Teknis" data-en="Lessons Learned & Retrospective">Pembelajaran & Catatan Teknis</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 font-sans text-sm">
+                        <ul class="mt-4 space-y-2 text-muted font-light">
+                                                            <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                                    <span data-id="Fokus selesaikan masalah operasional harian kasir, hindari membangun fitur kompleks yang tidak mereka butuhkan." data-en="Prioritize daily operational needs over unnecessary architectural complexity.">
+                                        Fokus selesaikan masalah operasional harian kasir, hindari membangun fitur kompleks yang tidak mereka butuhkan.                                    </span>
+                                </li>
+                                                            <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                                    <span data-id="Optimasi garbage collection pada JS Canvas sangat penting untuk mencegah lambatnya browser saat mengedit foto resolusi tinggi." data-en="Optimize JavaScript canvas garbage collection to prevent browser lag during high-resolution photo editing.">
+                                        Optimasi garbage collection pada JS Canvas sangat penting untuk mencegah lambatnya browser saat mengedit foto resolusi tinggi.                                    </span>
+                                </li>
+                                                    </ul>
+                    </div>
+                </details>
+            
+            <!-- Accordion Item 4: Future Improvements / Roadmap -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="map" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Rencana Pengembangan (Roadmap)" data-en="Future Improvements & Roadmap">Rencana Pengembangan (Roadmap)</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 font-sans text-sm">
+                        <ul class="mt-4 space-y-2 text-muted font-light">
+                                                            <li class="flex items-center gap-2.5">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                                    <span data-id="Migrasi database bertahap ke layanan cloud agar pemilik bisa memantau pesanan jarak jauh." data-en="Gradual database cloud migration for remote management monitoring.">
+                                        Migrasi database bertahap ke layanan cloud agar pemilik bisa memantau pesanan jarak jauh.                                    </span>
+                                </li>
+                                                            <li class="flex items-center gap-2.5">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                                    <span data-id="Menambahkan AI deteksi wajah untuk otomatisasi cropping pas foto." data-en="Face-detection AI integration for automated passport photo cropping.">
+                                        Menambahkan AI deteksi wajah untuk otomatisasi cropping pas foto.                                    </span>
+                                </li>
+                                                    </ul>
+                    </div>
+                </details>
+            
+        </div>
     </section>
 
-    <!-- 11. GALLERY -->
-    
-    <!-- 12. RESULT (STAR RESULT vs THE TEST & BENCHMARK) -->
-    <section class="max-w-5xl mx-auto flex flex-col gap-12">
-        <div class="flex flex-col gap-2 text-center items-center">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="10 / Dampak & Hasil" data-en="10 / The Impact (Result)">
-                10 / Dampak & Hasil            </span>
-            <h2 class="text-3xl font-medium text-text" data-id="Result" data-en="Result">
-                Result            </h2>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="flex flex-col items-center text-center gap-2">
-                <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">40%</span>
-                <span class="text-sm font-mono text-muted uppercase tracking-widest">Proses lebih cepat</span>
-            </div>
-            <div class="flex flex-col items-center text-center gap-2">
-                <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">&lt;1%</span>
-                <span class="text-sm font-mono text-muted uppercase tracking-widest">Kesalahan cetak</span>
-            </div>
-            <div class="flex flex-col items-center text-center gap-2">
-                <span class="text-6xl md:text-7xl font-bold tracking-tighter text-text">100%</span>
-                <span class="text-sm font-mono text-muted uppercase tracking-widest">Alur kerja digital</span>
-            </div>
-        </div>
-        
-                    <p class="text-center text-lg text-muted font-light max-w-2xl mx-auto mt-4">
-                Aplikasi berhasil mengeliminasi ketergantungan pada Photoshop. Admin toko kini bisa memproses layouting dan menghapus latar belakang foto langsung dari web, yang memangkas waktu tunggu pelanggan secara signifikan dan memperlancar alur produksi ke mesin cetak.            </p>
-            </section>
-
-    <!-- 13. LESSONS & 14. ROADMAP -->
-            <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 pt-12 border-t border-border">
-            
-            <!-- Lessons Learned / Workshop Notes -->
-                            <div class="flex flex-col gap-8">
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="11 / Pembelajaran" data-en="11 / Retrospective">
-                            11 / Pembelajaran                        </span>
-                        <h2 class="text-2xl font-medium text-text" data-id="Pembelajaran" data-en="Lessons Learned">
-                            Lessons Learned                        </h2>
-                    </div>
-                    <ul class="flex flex-col gap-4 text-muted font-light">
-                                                    <li class="flex gap-4">
-                                <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i>
-                                <span>Fokus selesaikan masalah operasional harian kasir, hindari membangun fitur kompleks yang tidak mereka butuhkan.</span>
-                            </li>
-                                                    <li class="flex gap-4">
-                                <i data-lucide="check" class="w-5 h-5 text-accent shrink-0"></i>
-                                <span>Optimasi garbage collection pada JS Canvas sangat penting untuk mencegah lambatnya browser saat mengedit foto resolusi tinggi.</span>
-                            </li>
-                                            </ul>
-                </div>
-            
-            <!-- Future Improvements / Next Evolution -->
-                            <div class="flex flex-col gap-8">
-                    <div class="flex flex-col gap-2">
-                        <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="12 / Rencana Masa Depan" data-en="12 / Roadmap">
-                            12 / Rencana Masa Depan                        </span>
-                        <h2 class="text-2xl font-medium text-text" data-id="Peningkatan Masa Depan" data-en="Future Improvements">
-                            Future Improvements                        </h2>
-                    </div>
-                    <ul class="flex flex-col gap-4 text-muted font-light">
-                                                    <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
-                                <i data-lucide="arrow-up-right" class="w-5 h-5 text-muted"></i>
-                                <span>Migrasi database bertahap ke layanan cloud agar pemilik bisa memantau pesanan jarak jauh.</span>
-                            </li>
-                                                    <li class="flex items-center gap-4 border border-border rounded-lg p-4 bg-surface/50">
-                                <i data-lucide="arrow-up-right" class="w-5 h-5 text-muted"></i>
-                                <span>Menambahkan AI deteksi wajah untuk otomatisasi cropping pas foto.</span>
-                            </li>
-                                            </ul>
-                </div>
-            
-        </section>
-    
 </article>
 
-<!-- 15. NEXT PROJECT -->
+<!-- 8. NEXT PROJECT -->
     </main>
 
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
 <footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
-    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+        
+        <!-- Left: Headline & Direct Contact -->
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something resilient?">
                 Ready to build something?            </span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
                 <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
                     Let&#039;s talk                </span>
+                <span class="text-muted/60">• contact@engineeringportfolio.com</span>
             </a>
         </div>
         
-        <div class="flex items-center gap-6 text-xs">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
+        <!-- Right: Pure Minimalist Lucide Icon Badges -->
+        <div class="flex items-center gap-3">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
+                    <i data-lucide="github" class="w-4 h-4"></i>
+                </a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="LinkedIn Profile" title="LinkedIn">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                </a>
+                                        <a href="mailto:contact@engineeringportfolio.com" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="Send Email" title="Email">
+                    <i data-lucide="mail" class="w-4 h-4"></i>
+                </a>
                     </div>
+
     </div>
 </footer>
     <!-- Module Initialization Scripts -->

@@ -183,12 +183,16 @@
     </div>
 </section>
 
-<!-- Hero Image -->
+<!-- Hero Main Image -->
 <section class="px-6 pb-16">
     <div class="max-w-6xl mx-auto">
-        <div class="w-full aspect-[21/9] bg-surface border border-border rounded-2xl overflow-hidden relative group">
+        <div class="w-full aspect-[21/9] bg-surface border border-border rounded-2xl overflow-hidden relative group cursor-pointer" onclick="openProjectLightbox(0)">
             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                            <img src="/uploads/1788031743_Screenshot10.png" alt="TurikalePrint: Automated Layouting Web App" class="w-full h-full object-cover">
+                            <img src="/uploads/1788031743_Screenshot10.png" alt="TurikalePrint: Automated Layouting Web App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-mono text-white flex items-center gap-1.5 border border-white/10">
+                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                    <span data-id="Perbesar Foto" data-en="Zoom Image">Perbesar Foto</span>
+                </div>
                     </div>
     </div>
 </section>
@@ -339,7 +343,61 @@
                                     </div>
     </section>
 
-    <!-- 6. GALLERY -->
+    <!-- 6. MULTI-IMAGE GALLERY / PROJECT SCREENSHOT SHOWCASE -->
+            <section class="max-w-6xl mx-auto flex flex-col gap-8">
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="06 / Galeri Tangkapan Layar & Foto" data-en="06 / Visual Gallery & Screenshots">06 / Galeri Tangkapan Layar & Foto</span>
+                <div class="h-[1px] flex-grow bg-border"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                                                        <div onclick="openProjectLightbox(0)" class="sm:col-span-2 md:col-span-2 aspect-[16/9] bg-surface border border-border rounded-xl overflow-hidden relative group cursor-pointer shadow-sm hover:border-accent/50 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <img src="/uploads/1788031743_Screenshot10.png" alt="Project Screenshot 1" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="p-2 rounded-lg bg-black/70 backdrop-blur-md text-white border border-white/10 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                        <div class="absolute bottom-0 inset-x-0 p-3.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent font-mono text-xs text-text flex items-center justify-between z-20">
+                            <span class="text-[11px] text-muted">Canvas Layouting &amp; Print Engine</span>
+                            <span class="text-[10px] text-muted bg-white/10 px-2 py-0.5 rounded border border-white/10">1 / 3</span>
+                        </div>
+                    </div>
+                                                        <div onclick="openProjectLightbox(1)" class="aspect-[4/3] bg-surface border border-border rounded-xl overflow-hidden relative group cursor-pointer shadow-sm hover:border-accent/50 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <img src="/uploads/1788093243_0_Screenshot13.png" alt="Project Screenshot 2" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="p-2 rounded-lg bg-black/70 backdrop-blur-md text-white border border-white/10 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                        <div class="absolute bottom-0 inset-x-0 p-3.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent font-mono text-xs text-text flex items-center justify-between z-20">
+                            <span class="text-[11px] text-muted">Screenshot 2</span>
+                            <span class="text-[10px] text-muted bg-white/10 px-2 py-0.5 rounded border border-white/10">2 / 3</span>
+                        </div>
+                    </div>
+                                                        <div onclick="openProjectLightbox(2)" class="aspect-[4/3] bg-surface border border-border rounded-xl overflow-hidden relative group cursor-pointer shadow-sm hover:border-accent/50 transition-all duration-300">
+                        <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <img src="/uploads/1788093262_0_Screenshot13.png" alt="Project Screenshot 3" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        
+                        <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <span class="p-2 rounded-lg bg-black/70 backdrop-blur-md text-white border border-white/10 flex items-center justify-center">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                        <div class="absolute bottom-0 inset-x-0 p-3.5 bg-gradient-to-t from-black/80 via-black/40 to-transparent font-mono text-xs text-text flex items-center justify-between z-20">
+                            <span class="text-[11px] text-muted">Screenshot 3</span>
+                            <span class="text-[10px] text-muted bg-white/10 px-2 py-0.5 rounded border border-white/10">3 / 3</span>
+                        </div>
+                    </div>
+                            </div>
+        </section>
     
     <!-- 7. RECRUITER-FRIENDLY ACCORDION: CHALLENGES, DECISIONS, LESSONS & ROADMAP -->
     <section class="max-w-5xl mx-auto flex flex-col gap-6 pt-6 border-t border-border">
@@ -424,7 +482,92 @@
 </article>
 
 <!-- 8. NEXT PROJECT -->
-    </main>
+
+<!-- PROJECT MULTI-IMAGE LIGHTBOX MODAL -->
+<div id="project-lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full flex flex-col items-center gap-4">
+        
+        <!-- Top bar -->
+        <div class="w-full flex items-center justify-between text-white font-mono text-xs px-2">
+            <span id="lb-counter" class="bg-white/10 px-3 py-1 rounded-full border border-white/10">1 / 1</span>
+            <button type="button" onclick="closeProjectLightbox()" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer" aria-label="Close">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Main Image with Prev/Next buttons -->
+        <div class="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center">
+            <button type="button" onclick="navigateLightbox(-1)" class="absolute left-2 md:left-4 z-10 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/10 transition-colors cursor-pointer">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+
+            <img id="lb-image" src="#" alt="Enlarged Screenshot" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-border">
+
+            <button type="button" onclick="navigateLightbox(1)" class="absolute right-2 md:right-4 z-10 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/10 transition-colors cursor-pointer">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Caption / Info -->
+        <div id="lb-caption" class="text-xs font-mono text-muted text-center max-w-xl"></div>
+    </div>
+</div>
+
+<script>
+    const projectGalleryData = [{"image":"/uploads/1788031743_Screenshot10.png","caption":"Canvas Layouting & Print Engine"},{"image":"/uploads/1788093243_0_Screenshot13.png","caption":""},{"image":"/uploads/1788093262_0_Screenshot13.png","caption":""}];
+    let currentLightboxIndex = 0;
+
+    function openProjectLightbox(index) {
+        if (!projectGalleryData || projectGalleryData.length === 0) return;
+        currentLightboxIndex = index;
+        updateLightboxView();
+        const modal = document.getElementById('project-lightbox-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    function closeProjectLightbox() {
+        const modal = document.getElementById('project-lightbox-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    function navigateLightbox(step) {
+        if (!projectGalleryData || projectGalleryData.length <= 1) return;
+        currentLightboxIndex = (currentLightboxIndex + step + projectGalleryData.length) % projectGalleryData.length;
+        updateLightboxView();
+    }
+
+    function updateLightboxView() {
+        const imgEl = document.getElementById('lb-image');
+        const counterEl = document.getElementById('lb-counter');
+        const captionEl = document.getElementById('lb-caption');
+
+        if (projectGalleryData[currentLightboxIndex]) {
+            const cur = projectGalleryData[currentLightboxIndex];
+            imgEl.src = cur.image;
+            counterEl.innerText = `${currentLightboxIndex + 1} / ${projectGalleryData.length}`;
+            captionEl.innerText = cur.caption || '';
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('project-lightbox-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+            if (e.key === 'Escape') closeProjectLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        }
+    });
+
+    const lbModalEl = document.getElementById('project-lightbox-modal');
+    if (lbModalEl) {
+        lbModalEl.addEventListener('click', function(e) {
+            if (e.target === this) closeProjectLightbox();
+        });
+    }
+</script>    </main>
 
     <!-- Footer Component -->
     <!-- views/components/footer.php -->

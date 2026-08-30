@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,36 +57,62 @@
 <nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
     <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
+            
             <!-- Brand / Logo -->
-            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
-                <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
+            <a href="/" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Home">
+                <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)] group-hover:scale-125 transition-transform duration-300"></div>
+                <span class="font-mono text-xs md:text-sm font-semibold tracking-tight text-text opacity-90 group-hover:opacity-100 transition-opacity">
                     Engineering.                </span>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-text">/projects</a>
-                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            <!-- Right Actions Area (Desktop Navigation + Language Switcher + Mobile Toggle) -->
+            <div class="flex items-center gap-3 sm:gap-6">
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center gap-1 font-mono text-xs">
+                    <a href="/" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/home" data-en="/home">/home</span>
+                    </a>
+                    <a href="/projects" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-text bg-white/5 font-semibold border border-white/10">
+                        <span data-id="/projects" data-en="/projects">/projects</span>
+                    </a>
+                    <a href="/about" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/about" data-en="/about">/about</span>
+                    </a>
+                </div>
+
+                <!-- Language Switcher Button (Desktop & Mobile) -->
+                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Switch Language" title="Switch Language">
+                    <span class="lang-flag text-sm leading-none select-none">🇺🇸</span>
+                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">EN</span>
+                </button>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text hover:bg-white/5 rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                        <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                        <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                    </button>
+                </div>
+
             </div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div class="md:hidden flex items-center">
-                <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
-                    <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
-                    <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
-                </button>
-            </div>
         </div>
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-lg border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-2xl overflow-hidden">
         <div class="min-h-0">
-            <div class="px-6 py-6 space-y-4">
-                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-text">/projects</a>
-                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            <div class="px-6 py-5 space-y-2 font-mono text-sm">
+                <a href="/" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/home" data-en="/home">/home</span>
+                </a>
+                <a href="/projects" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-text bg-white/10 font-bold">
+                    <span data-id="/projects" data-en="/projects">/projects</span>
+                </a>
+                <a href="/about" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/about" data-en="/about">/about</span>
+                </a>
             </div>
         </div>
     </div>
@@ -106,7 +132,7 @@
                 <span class="text-xs font-mono text-muted uppercase tracking-widest">/</span>
                 <span class="text-xs font-mono text-text uppercase tracking-widest">turikaleprint-automated-layouting-web-app</span>
                 
-                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 ml-2">SOFTWARE & CYBERSECURITY</span>
+                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 ml-2" data-id="SOFTWARE & CYBERSECURITY" data-en="SOFTWARE & CYBERSECURITY">SOFTWARE & CYBERSECURITY</span>
                             </div>
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
                 TurikalePrint: Automated Layouting Web App            </h1>
@@ -115,19 +141,19 @@
         <!-- Right: Meta Data Grid -->
         <div class="w-full lg:w-[400px] grid grid-cols-2 gap-x-8 gap-y-6 text-sm font-mono border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-8">
             <div class="flex flex-col gap-1">
-                <span class="text-xs uppercase tracking-widest text-muted">Category</span>
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Kategori" data-en="Category">Kategori</span>
                 <span class="text-text font-medium">Web Development</span>
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-xs uppercase tracking-widest text-muted">Date</span>
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Tanggal" data-en="Date">Tanggal</span>
                 <span class="text-text font-medium">Aug 2026</span>
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-xs uppercase tracking-widest text-muted">Methodology</span>
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Metodologi" data-en="Methodology">Metodologi</span>
                 <span class="text-text font-medium">STAR Method</span>
             </div>
             <div class="flex flex-col gap-1">
-                <span class="text-xs uppercase tracking-widest text-muted">Role / Level</span>
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Peran / Tingkat" data-en="Role / Level">Peran / Tingkat</span>
                 <span class="text-text font-medium">Fullstack Developer</span>
             </div>
         </div>
@@ -147,8 +173,8 @@
 <!-- 2. PROJECT OVERVIEW -->
     <section class="py-24 px-6 border-y border-border bg-surface/30">
         <div class="max-w-4xl mx-auto text-center space-y-4">
-            <span class="text-xs font-mono uppercase tracking-widest text-muted">
-                Executive Summary            </span>
+            <span class="text-xs font-mono uppercase tracking-widest text-muted" data-id="Ikhtisar Eksekutif" data-en="Executive Summary">
+                Ikhtisar Eksekutif            </span>
             <p class="text-2xl md:text-3xl text-text font-light leading-relaxed opacity-90">
                 Platform cetak foto digital yang menjembatani pelanggan dan mesin produksi secara real-time. Fokus utamanya adalah memangkas waktu layouting (potong foto, ganti background, susun ukuran kertas) yang sebelumnya menjadi bottleneck karena dilakukan manual oleh operator.            </p>
         </div>
@@ -160,9 +186,9 @@
     <!-- 3. THE PROBLEM (SITUATION vs THE SPARK) -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                    01 / Situation                </span>
-                <h2 class="text-3xl font-medium text-text">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Situasi" data-en="01 / Situation">
+                    01 / Situasi                </span>
+                <h2 class="text-3xl font-medium text-text" data-id="Situation" data-en="Situation">
                     Situation                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
@@ -173,9 +199,9 @@
     <!-- 4. RESEARCH & ANALYSIS (TASK vs THE BLUEPRINT) -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                    02 / Task                </span>
-                <h2 class="text-3xl font-medium text-text">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Tugas & Analisis" data-en="02 / Task">
+                    02 / Tugas & Analisis                </span>
+                <h2 class="text-3xl font-medium text-text" data-id="Task" data-en="Task">
                     Task                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
@@ -189,9 +215,9 @@
     <!-- 5. SOLUTION (ACTION vs THE BUILD) -->
             <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
             <div class="md:col-span-4 flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                    03 / Action                </span>
-                <h2 class="text-3xl font-medium text-text">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Tindakan & Solusi" data-en="03 / Action">
+                    03 / Tindakan & Solusi                </span>
+                <h2 class="text-3xl font-medium text-text" data-id="Action" data-en="Action">
                     Action                </h2>
             </div>
             <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
@@ -202,10 +228,10 @@
     <!-- 6. SYSTEM ARCHITECTURE / SCHEMATIC -->
     <section class="max-w-6xl mx-auto flex flex-col gap-12">
         <div class="flex flex-col gap-2 text-center items-center">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                04 / Architecture            </span>
-            <h2 class="text-3xl font-medium text-text">
-                System Architecture            </h2>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Arsitektur Sistem" data-en="04 / Architecture">
+                04 / Arsitektur Sistem            </span>
+            <h2 class="text-3xl font-medium text-text" data-id="Arsitektur Sistem" data-en="System Architecture">
+                Arsitektur Sistem            </h2>
         </div>
         
                     <div class="max-w-3xl mx-auto text-center text-muted font-light">
@@ -220,7 +246,8 @@
                     <div class="w-16 h-16 rounded-full border border-border bg-background flex items-center justify-center">
                         <i data-lucide="laptop" class="w-6 h-6 text-muted"></i>
                     </div>
-                    <span class="text-text">Client UI</span>
+                    <span class="text-text" data-id="Antarmuka Klien" data-en="Client UI">
+                        Antarmuka Klien                    </span>
                 </div>
                 
                 <!-- Arrow -->
@@ -232,7 +259,8 @@
                     <div class="w-24 h-24 rounded-xl border border-accent/50 bg-accent/5 flex items-center justify-center">
                         <div class="text-center">
                             <i data-lucide="server" class="w-6 h-6 text-accent mx-auto mb-1"></i>
-                            <span class="text-xs font-bold text-accent">Core Engine</span>
+                            <span class="text-xs font-bold text-accent" data-id="Mesin Utama" data-en="Core Engine">
+                                Mesin Utama                            </span>
                         </div>
                     </div>
                 </div>
@@ -246,7 +274,8 @@
                     <div class="w-16 h-16 rounded-full border border-border bg-background flex items-center justify-center">
                         <i data-lucide="database" class="w-6 h-6 text-muted"></i>
                     </div>
-                    <span class="text-text">Database</span>
+                    <span class="text-text" data-id="Basis Data" data-en="Database">
+                        Basis Data                    </span>
                 </div>
             </div>
         </div>
@@ -255,10 +284,10 @@
     <!-- 7. DEVELOPMENT PROCESS / IMPLEMENTATION HIGHLIGHTS -->
             <section class="max-w-5xl mx-auto flex flex-col gap-12">
             <div class="flex flex-col gap-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                    05 / Execution                </span>
-                <h2 class="text-3xl font-medium text-text">
-                    Implementation Highlights                </h2>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="05 / Eksekusi Teknis" data-en="05 / Execution">
+                    05 / Eksekusi Teknis                </span>
+                <h2 class="text-3xl font-medium text-text" data-id="Sorotan Implementasi" data-en="Implementation Highlights">
+                    Sorotan Implementasi                </h2>
             </div>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 font-mono text-sm">
@@ -288,10 +317,10 @@
     <!-- 8. TECHNOLOGY & TOOLS STACK -->
     <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
         <div class="md:col-span-4 flex flex-col gap-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                06 / Tech Stack            </span>
-            <h2 class="text-3xl font-medium text-text">
-                Technology            </h2>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="06 / Tumpukan Teknologi" data-en="06 / Tech Stack">
+                06 / Tumpukan Teknologi            </span>
+            <h2 class="text-3xl font-medium text-text" data-id="Teknologi" data-en="Technology">
+                Teknologi            </h2>
         </div>
         <div class="md:col-span-8 flex flex-wrap gap-4">
                                                 <div class="px-5 py-3 rounded-lg border border-border bg-surface flex items-center gap-3">
@@ -323,10 +352,10 @@
         <!-- Challenges -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
                 <div class="md:col-span-4 flex flex-col gap-2">
-                    <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                        07 / Obstacles                    </span>
-                    <h2 class="text-3xl font-medium text-text">
-                        Challenges                    </h2>
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="07 / Hambatan" data-en="07 / Obstacles">
+                        07 / Hambatan                    </span>
+                    <h2 class="text-3xl font-medium text-text" data-id="Tantangan Teknis" data-en="Challenges">
+                        Tantangan Teknis                    </h2>
                 </div>
                 <div class="md:col-span-8 flex flex-col gap-8">
                     <div class="pl-6 border-l-2 border-accent">
@@ -344,9 +373,9 @@
     <!-- 12. RESULT (STAR RESULT vs THE TEST & BENCHMARK) -->
     <section class="max-w-5xl mx-auto flex flex-col gap-12">
         <div class="flex flex-col gap-2 text-center items-center">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                10 / The Impact (Result)            </span>
-            <h2 class="text-3xl font-medium text-text">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="10 / Dampak & Hasil" data-en="10 / The Impact (Result)">
+                10 / Dampak & Hasil            </span>
+            <h2 class="text-3xl font-medium text-text" data-id="Result" data-en="Result">
                 Result            </h2>
         </div>
         
@@ -375,9 +404,9 @@
             <!-- Lessons Learned / Workshop Notes -->
                             <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-2">
-                        <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                            11 / Retrospective                        </span>
-                        <h2 class="text-2xl font-medium text-text">
+                        <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="11 / Pembelajaran" data-en="11 / Retrospective">
+                            11 / Pembelajaran                        </span>
+                        <h2 class="text-2xl font-medium text-text" data-id="Pembelajaran" data-en="Lessons Learned">
                             Lessons Learned                        </h2>
                     </div>
                     <ul class="flex flex-col gap-4 text-muted font-light">
@@ -395,9 +424,9 @@
             <!-- Future Improvements / Next Evolution -->
                             <div class="flex flex-col gap-8">
                     <div class="flex flex-col gap-2">
-                        <span class="text-xs font-mono text-muted uppercase tracking-widest">
-                            12 / Roadmap                        </span>
-                        <h2 class="text-2xl font-medium text-text">
+                        <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="12 / Rencana Masa Depan" data-en="12 / Roadmap">
+                            12 / Rencana Masa Depan                        </span>
+                        <h2 class="text-2xl font-medium text-text" data-id="Peningkatan Masa Depan" data-en="Future Improvements">
                             Future Improvements                        </h2>
                     </div>
                     <ul class="flex flex-col gap-4 text-muted font-light">
@@ -421,16 +450,20 @@
 
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
-<footer class="mt-auto border-t border-border">
-    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90">Ready to build something?</span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-sm text-muted hover:text-text transition-colors">Let&#039;s talk</a>
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+                Ready to build something?            </span>
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+                <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
+                    Let&#039;s talk                </span>
+            </a>
         </div>
         
-        <div class="flex items-center gap-6">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-sm text-muted hover:text-text transition-colors">LinkedIn</a>
+        <div class="flex items-center gap-6 text-xs">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
                     </div>
     </div>
 </footer>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,36 +57,62 @@
 <nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
     <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
+            
             <!-- Brand / Logo -->
-            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
-                <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
+            <a href="/" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Home">
+                <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)] group-hover:scale-125 transition-transform duration-300"></div>
+                <span class="font-mono text-xs md:text-sm font-semibold tracking-tight text-text opacity-90 group-hover:opacity-100 transition-opacity">
                     Engineering.                </span>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
-                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-text">/about</a>
+            <!-- Right Actions Area (Desktop Navigation + Language Switcher + Mobile Toggle) -->
+            <div class="flex items-center gap-3 sm:gap-6">
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center gap-1 font-mono text-xs">
+                    <a href="/" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/home" data-en="/home">/home</span>
+                    </a>
+                    <a href="/projects" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/projects" data-en="/projects">/projects</span>
+                    </a>
+                    <a href="/about" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-text bg-white/5 font-semibold border border-white/10">
+                        <span data-id="/about" data-en="/about">/about</span>
+                    </a>
+                </div>
+
+                <!-- Language Switcher Button (Desktop & Mobile) -->
+                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Switch Language" title="Switch Language">
+                    <span class="lang-flag text-sm leading-none select-none">🇺🇸</span>
+                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">EN</span>
+                </button>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text hover:bg-white/5 rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                        <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                        <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                    </button>
+                </div>
+
             </div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div class="md:hidden flex items-center">
-                <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
-                    <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
-                    <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
-                </button>
-            </div>
         </div>
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-lg border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-2xl overflow-hidden">
         <div class="min-h-0">
-            <div class="px-6 py-6 space-y-4">
-                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
-                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-text">/about</a>
+            <div class="px-6 py-5 space-y-2 font-mono text-sm">
+                <a href="/" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/home" data-en="/home">/home</span>
+                </a>
+                <a href="/projects" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/projects" data-en="/projects">/projects</span>
+                </a>
+                <a href="/about" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-text bg-white/10 font-bold">
+                    <span data-id="/about" data-en="/about">/about</span>
+                </a>
             </div>
         </div>
     </div>
@@ -112,7 +138,7 @@
     <!-- My Journey -->
     <section class="flex flex-col gap-8">
         <div class="flex items-center gap-4 mb-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">01 / The Journey</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Perjalanan Karir" data-en="01 / The Journey">01 / Perjalanan Karir</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
@@ -126,7 +152,7 @@
     <!-- Engineering Principles -->
             <section class="flex flex-col gap-8">
             <div class="flex items-center gap-4 mb-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">02 / Principles</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Prinsip Engineering" data-en="02 / Principles">02 / Prinsip Engineering</span>
                 <div class="h-[1px] flex-grow bg-border"></div>
             </div>
             
@@ -153,7 +179,7 @@
     <!-- Timeline -->
             <section class="flex flex-col gap-8">
             <div class="flex items-center gap-4 mb-2">
-                <span class="text-xs font-mono text-muted uppercase tracking-widest">03 / Timeline</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Linimasa" data-en="03 / Timeline">03 / Linimasa</span>
                 <div class="h-[1px] flex-grow bg-border"></div>
             </div>
             
@@ -184,7 +210,7 @@
     <!-- Certifications / Credentials -->
     <section id="certifications" class="flex flex-col gap-10">
         <div class="flex items-center gap-4 mb-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">04 / Credentials & Certifications</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Kredensial & Sertifikasi" data-en="04 / Credentials & Certifications">04 / Kredensial & Sertifikasi</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
@@ -194,7 +220,7 @@
                             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                                                                                 <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
                                         <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest">PDF Certificate</span>
+                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest" data-id="Sertifikat PDF" data-en="PDF Certificate">Sertifikat PDF</span>
                                     </div>
                                                                                     </div>
                         <div class="flex flex-col">
@@ -207,7 +233,7 @@
                             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                                                                                 <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
                                         <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest">PDF Certificate</span>
+                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest" data-id="Sertifikat PDF" data-en="PDF Certificate">Sertifikat PDF</span>
                                     </div>
                                                                                     </div>
                         <div class="flex flex-col">
@@ -220,7 +246,7 @@
                             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                                                                                 <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
                                         <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest">PDF Certificate</span>
+                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest" data-id="Sertifikat PDF" data-en="PDF Certificate">Sertifikat PDF</span>
                                     </div>
                                                                                     </div>
                         <div class="flex flex-col">
@@ -234,7 +260,7 @@
     <!-- Let's Connect (Contact Section) -->
     <section id="connect" class="flex flex-col gap-8 pt-6 border-t border-border">
         <div class="flex items-center gap-4 mb-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest">05 / Let's Connect</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="05 / Mari Terhubung" data-en="05 / Let's Connect">05 / Mari Terhubung</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
 
@@ -256,7 +282,7 @@
                     <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Direct Mail</span>
+                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Kirim Email" data-en="Direct Mail">Kirim Email</span>
                 </div>
                 <div class="flex flex-col gap-0.5">
                     <span class="text-xs font-mono text-muted">Email</span>
@@ -270,7 +296,7 @@
                         <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
                             <i data-lucide="github" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Source Code</span>
+                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Kode Sumber" data-en="Source Code">Kode Sumber</span>
                     </div>
                     <div class="flex flex-col gap-0.5">
                         <span class="text-xs font-mono text-muted">GitHub</span>
@@ -284,7 +310,7 @@
                         <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text group-hover:text-accent transition-colors">
                             <i data-lucide="linkedin" class="w-5 h-5"></i>
                         </div>
-                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Professional Network</span>
+                        <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Jaringan Profesional" data-en="Professional Network">Jaringan Profesional</span>
                     </div>
                     <div class="flex flex-col gap-0.5">
                         <span class="text-xs font-mono text-muted">LinkedIn</span>
@@ -298,10 +324,10 @@
                     <div class="w-10 h-10 rounded-xl bg-white/5 border border-border flex items-center justify-center text-text">
                         <i data-lucide="map-pin" class="w-5 h-5"></i>
                     </div>
-                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest">Availability</span>
+                    <span class="text-[11px] font-mono text-muted uppercase tracking-widest" data-id="Ketersediaan" data-en="Availability">Ketersediaan</span>
                 </div>
                 <div class="flex flex-col gap-0.5">
-                    <span class="text-xs font-mono text-muted">Location & Timezone</span>
+                    <span class="text-xs font-mono text-muted" data-id="Lokasi & Zona Waktu" data-en="Location & Timezone">Lokasi & Zona Waktu</span>
                     <span class="text-base font-medium text-text">Indonesia (UTC+8 / UTC+7) • Remote</span>
                 </div>
             </div>
@@ -316,7 +342,7 @@
     <div class="relative bg-surface border border-border rounded-2xl max-w-3xl w-full p-6 space-y-4 font-mono shadow-2xl">
         <div class="flex items-start justify-between border-b border-border pb-3">
             <div>
-                <h3 id="pub-cert-title" class="text-base md:text-lg font-bold text-text">Certificate</h3>
+                <h3 id="pub-cert-title" class="text-base md:text-lg font-bold text-text" data-id="Sertifikat" data-en="Certificate">Sertifikat</h3>
                 <p id="pub-cert-meta" class="text-xs text-muted mt-0.5"></p>
             </div>
             <button type="button" onclick="closePublicCertModal()" class="text-muted hover:text-text p-1.5 rounded-lg hover:bg-white/5 transition-colors" aria-label="Close modal">
@@ -334,12 +360,13 @@
             <div id="pub-cert-direct-download" class="hidden">
                 <a id="pub-cert-file-link" href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-muted hover:text-text">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
-                    <span>Open / Download File</span>
+                    <span data-id="Buka / Unduh File" data-en="Open / Download File">Buka / Unduh File</span>
                 </a>
             </div>
             <div id="pub-cert-link-wrapper" class="hidden ml-auto">
                 <a id="pub-cert-url" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-accent hover:underline">
-                    Verify Credential <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    <span data-id="Verifikasi Kredensial" data-en="Verify Credential">Verifikasi Kredensial</span>
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                 </a>
             </div>
         </div>
@@ -419,16 +446,20 @@
 
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
-<footer class="mt-auto border-t border-border">
-    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90">Ready to build something?</span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-sm text-muted hover:text-text transition-colors">Let&#039;s talk</a>
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+                Ready to build something?            </span>
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+                <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
+                    Let&#039;s talk                </span>
+            </a>
         </div>
         
-        <div class="flex items-center gap-6">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-sm text-muted hover:text-text transition-colors">LinkedIn</a>
+        <div class="flex items-center gap-6 text-xs">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
                     </div>
     </div>
 </footer>

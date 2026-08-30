@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,110 +57,93 @@
 <nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
     <div class="max-w-5xl mx-auto px-6">
         <div class="flex items-center justify-between h-16">
+            
             <!-- Brand / Logo -->
-            <a href="/" class="flex items-center gap-2 group focus:outline-none" aria-label="Home">
-                <span class="text-sm font-semibold text-text tracking-tight opacity-90 group-hover:opacity-100 transition-opacity">
+            <a href="/" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Home">
+                <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)] group-hover:scale-125 transition-transform duration-300"></div>
+                <span class="font-mono text-xs md:text-sm font-semibold tracking-tight text-text opacity-90 group-hover:opacity-100 transition-opacity">
                     Engineering.                </span>
             </a>
 
-            <!-- Desktop Navigation -->
-            <div class="hidden md:flex items-center gap-8">
-                <a href="/" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/projects" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
-                <a href="/about" class="text-xs font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            <!-- Right Actions Area (Desktop Navigation + Language Switcher + Mobile Toggle) -->
+            <div class="flex items-center gap-3 sm:gap-6">
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center gap-1 font-mono text-xs">
+                    <a href="/" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/home" data-en="/home">/home</span>
+                    </a>
+                    <a href="/projects" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/projects" data-en="/projects">/projects</span>
+                    </a>
+                    <a href="/about" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/about" data-en="/about">/about</span>
+                    </a>
+                </div>
+
+                <!-- Language Switcher Button (Desktop & Mobile) -->
+                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Switch Language" title="Switch Language">
+                    <span class="lang-flag text-sm leading-none select-none">🇺🇸</span>
+                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">EN</span>
+                </button>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text hover:bg-white/5 rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                        <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                        <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                    </button>
+                </div>
+
             </div>
 
-            <!-- Mobile Menu Toggle Button -->
-            <div class="md:hidden flex items-center">
-                <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
-                    <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
-                    <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
-                </button>
-            </div>
         </div>
     </div>
 
     <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-lg overflow-hidden">
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-lg border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-2xl overflow-hidden">
         <div class="min-h-0">
-            <div class="px-6 py-6 space-y-4">
-                <a href="/" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/home</a>
-                <a href="/projects" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/projects</a>
-                <a href="/about" class="block text-sm font-mono transition-colors duration-200 text-muted hover:text-text">/about</a>
+            <div class="px-6 py-5 space-y-2 font-mono text-sm">
+                <a href="/" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/home" data-en="/home">/home</span>
+                </a>
+                <a href="/projects" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/projects" data-en="/projects">/projects</span>
+                </a>
+                <a href="/about" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/about" data-en="/about">/about</span>
+                </a>
             </div>
         </div>
     </div>
 </nav>
     <!-- Main Content -->
     <main class="flex-grow flex flex-col">
-        <section class="relative min-h-screen flex flex-col items-center justify-center bg-surface overflow-hidden pt-20 pb-20">
-    <!-- Abstract Background -->
-    <div class="absolute inset-0 pointer-events-none z-0">
-        <!-- Soft Gradient & Blurs -->
-        <div class="absolute top-1/4 left-1/4 w-[500px] h-[500px] bg-primary/5 blur-[120px] rounded-full mix-blend-multiply"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] bg-accent/5 blur-[100px] rounded-full mix-blend-multiply"></div>
+        <!-- views/errors/404.php -->
+<section class="relative min-h-[75vh] flex flex-col items-center justify-center bg-background overflow-hidden py-24 px-6">
+    <div class="relative z-10 flex flex-col items-center text-center max-w-xl mx-auto space-y-6">
         
-        <!-- Engineering Grid / Blueprint pattern (SVG) -->
-        <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <pattern id="blueprint-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                    <rect width="40" height="40" fill="none" stroke="currentColor" stroke-width="0.5" class="text-muted"/>
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#blueprint-grid)" />
-        </svg>
-
-        <!-- Noise overlay (light CSS trick using embedded base64 SVG) -->
-        <div class="absolute inset-0 opacity-[0.03] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0IiBoZWlnaHQ9IjQiPgo8cmVjdCB3aWR0aD0iNCIgaGVpZ2h0PSI0IiBmaWxsPSIjZmZmIiAvPgo8cmVjdCB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIiAvPgo8cmVjdCB4PSIyIiB5PSIyIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSIjMDAwIiAvPgo8L3N2Zz4=')]"></div>
-    </div>
-
-    <!-- Content -->
-    <div class="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-2xl mx-auto">
-        
-        <!-- Abstract Illustration -->
-        <div class="err-reveal relative w-64 h-64 mb-10 flex items-center justify-center">
-            <!-- Node Connections SVG -->
-            <svg class="absolute inset-0 w-full h-full" viewBox="0 0 200 200">
-                <!-- Lines -->
-                <path d="M 50 150 L 100 50 L 150 150" fill="none" stroke="currentColor" stroke-width="1.5" class="text-muted" stroke-dasharray="4 4"/>
-                <path d="M 30 100 L 170 100" fill="none" stroke="currentColor" stroke-width="1.5" class="text-primary/40"/>
-                
-                <!-- Nodes -->
-                <circle cx="100" cy="50" r="5" class="fill-primary" id="err-node-1"/>
-                <circle cx="50" cy="150" r="6" class="fill-accent" id="err-node-2"/>
-                <circle cx="150" cy="150" r="6" class="fill-blue-400" id="err-node-3"/>
-                <circle cx="30" cy="100" r="4" class="fill-orange-400" id="err-node-4"/>
-                <circle cx="170" cy="100" r="4" class="fill-purple-400" id="err-node-5"/>
-            </svg>
-            
-            <!-- Central overlapping blur/glow -->
-            <div class="absolute w-32 h-32 bg-white rounded-full shadow-[0_0_40px_rgba(0,0,0,0.05)] flex items-center justify-center border border-border animate-[pulse_4s_infinite]">
-                 <span class="text-5xl font-black text-dark tracking-tighter">404</span>
-            </div>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface border border-border text-text font-mono text-xs shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+            <span data-id="Galat 404: Halaman Tidak Ditemukan" data-en="Error 404: Page Not Found">Galat 404: Halaman Tidak Ditemukan</span>
         </div>
 
-        <div class="err-reveal inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white border border-border shadow-sm text-dark mb-6">
-            <i data-lucide="compass" class="w-4 h-4 text-primary"></i>
-            <span class="text-xs font-bold uppercase tracking-widest text-muted">Error 404</span>
-        </div>
-
-        <h1 class="err-reveal text-5xl md:text-6xl font-extrabold text-dark tracking-tight leading-tight mb-6">
-            Looks Like<br/>
-            You're Off The Map.
+        <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-text leading-none">
+            404
         </h1>
         
-        <p class="err-reveal text-lg md:text-xl text-muted leading-relaxed font-normal max-w-lg mx-auto mb-10">
-            The page you're looking for doesn't exist or may have been moved.
+        <p class="text-base md:text-lg text-muted font-light leading-relaxed max-w-md mx-auto" data-id="Halaman yang Anda cari tidak tersedia atau mungkin telah dipindahkan ke alamat baru." data-en="The page you are looking for is unavailable or might have been moved.">
+            Halaman yang Anda cari tidak tersedia atau mungkin telah dipindahkan ke alamat baru.
         </p>
         
-        <div class="err-reveal flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
-            <!-- Primary Button -->
-            <a href="/" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-white bg-dark rounded-xl hover:bg-gray-800 hover:-translate-y-0.5 transition-all duration-300 shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
-                <i data-lucide="home" class="w-4 h-4 mr-2"></i> Back To Home
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 font-mono text-xs w-full sm:w-auto">
+            <a href="/" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-text text-background font-bold hover:bg-accent transition-colors gap-2">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                <span data-id="Kembali ke Beranda" data-en="Back To Home">Kembali ke Beranda</span>
             </a>
-            <!-- Secondary Button -->
-            <a href="/projects" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-dark bg-white border border-border rounded-xl hover:bg-surface hover:-translate-y-0.5 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-dark">
-                Browse Projects <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+            <a href="/projects" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-surface border border-border text-text hover:border-accent hover:text-accent transition-colors gap-2">
+                <span data-id="Jelajahi Proyek" data-en="Browse Projects">Jelajahi Proyek</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
 
@@ -169,16 +152,20 @@
 
     <!-- Footer Component -->
     <!-- views/components/footer.php -->
-<footer class="mt-auto border-t border-border">
-    <div class="max-w-4xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
+<footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90">Ready to build something?</span>
-            <a href="mailto:contact@engineeringportfolio.com" class="text-sm text-muted hover:text-text transition-colors">Let&#039;s talk</a>
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something?">
+                Ready to build something?            </span>
+            <a href="mailto:contact@engineeringportfolio.com" class="text-xs text-muted hover:text-text transition-colors">
+                <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
+                    Let&#039;s talk                </span>
+            </a>
         </div>
         
-        <div class="flex items-center gap-6">
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-sm text-muted hover:text-text transition-colors">GitHub</a>
-                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-sm text-muted hover:text-text transition-colors">LinkedIn</a>
+        <div class="flex items-center gap-6 text-xs">
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">GitHub</a>
+                                        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="text-muted hover:text-text transition-colors">LinkedIn</a>
                     </div>
     </div>
 </footer>

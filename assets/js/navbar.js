@@ -5,7 +5,7 @@
 
 const LanguageManager = {
     STORAGE_KEY: 'portfolio_lang',
-    DEFAULT_LANG: 'id',
+    DEFAULT_LANG: 'en',
 
     init() {
         const savedLang = localStorage.getItem(this.STORAGE_KEY) || this.DEFAULT_LANG;

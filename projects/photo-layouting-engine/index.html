@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var lang = localStorage.getItem('portfolio_lang') || 'en';
+            document.documentElement.lang = lang;
+        })();
+    </script>
+    <title>Engineering.</title>
+    
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (via CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        background: '#0A0A0A',
+                        surface: '#111111',
+                        border: 'rgba(255, 255, 255, 0.1)',
+                        text: '#EDEDED',
+                        muted: '#888888',
+                        accent: '#E5E5E5',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <style>
+        /* Custom minimal scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #555; }
+        
+        /* Utility for hairline borders */
+        .hairline-t { border-top: 1px solid rgba(255,255,255,0.1); }
+        .hairline-b { border-bottom: 1px solid rgba(255,255,255,0.1); }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-background text-text font-sans antialiased selection:bg-white/20 selection:text-white flex flex-col min-h-screen">
+
+    <!-- Header / Navbar Component -->
+    <!-- views/components/navbar.php -->
+<nav id="navbar" class="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-md border-b border-border transition-all duration-300">
+    <div class="max-w-5xl mx-auto px-6">
+        <div class="flex items-center justify-between h-16">
+            
+            <!-- Brand / Logo -->
+            <a href="/" class="flex items-center gap-2.5 group focus:outline-none" aria-label="Home">
+                <div class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.7)] group-hover:scale-125 transition-transform duration-300"></div>
+                <span class="font-mono text-xs md:text-sm font-semibold tracking-tight text-text opacity-90 group-hover:opacity-100 transition-opacity">
+                    Engineering.                </span>
+            </a>
+
+            <!-- Right Actions Area (Desktop Navigation + Language Switcher + Mobile Toggle) -->
+            <div class="flex items-center gap-3 sm:gap-6">
+                
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center gap-1 font-mono text-xs">
+                    <a href="/" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/home" data-en="/home">/home</span>
+                    </a>
+                    <a href="/projects" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-text bg-white/5 font-semibold border border-white/10">
+                        <span data-id="/projects" data-en="/projects">/projects</span>
+                    </a>
+                    <a href="/about" class="px-3 py-1.5 rounded-lg transition-all duration-200 text-muted hover:text-text hover:bg-white/5 border border-transparent">
+                        <span data-id="/about" data-en="/about">/about</span>
+                    </a>
+                </div>
+
+                <!-- Language Switcher Button (Desktop & Mobile) -->
+                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Ganti ke Bahasa Indonesia" title="Ganti ke Bahasa Indonesia">
+                    <span class="lang-flag text-sm leading-none select-none">🇮🇩</span>
+                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">ID</span>
+                </button>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="md:hidden flex items-center">
+                    <button type="button" id="mobile-menu-btn" class="p-2 -mr-2 text-muted hover:text-text hover:bg-white/5 rounded-lg transition-colors focus:outline-none" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle menu">
+                        <i data-lucide="menu" id="icon-menu" class="w-5 h-5"></i>
+                        <i data-lucide="x" id="icon-close" class="w-5 h-5 hidden"></i>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden absolute top-16 left-0 w-full bg-surface/95 backdrop-blur-lg border-b border-border grid grid-rows-[0fr] opacity-0 invisible transition-all duration-300 ease-in-out shadow-2xl overflow-hidden">
+        <div class="min-h-0">
+            <div class="px-6 py-5 space-y-2 font-mono text-sm">
+                <a href="/" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/home" data-en="/home">/home</span>
+                </a>
+                <a href="/projects" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-text bg-white/10 font-bold">
+                    <span data-id="/projects" data-en="/projects">/projects</span>
+                </a>
+                <a href="/about" class="flex items-center px-3 py-2.5 rounded-lg transition-colors text-muted hover:text-text hover:bg-white/5">
+                    <span data-id="/about" data-en="/about">/about</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col">
+        <!-- views/projects/detail.php -->
+
+<!-- 1. HERO SECTION -->
+<section class="relative pt-32 pb-12 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 lg:items-end">
+        
+        <!-- Left: Project Title -->
+        <div class="flex-1 flex flex-col gap-6">
+            <div class="flex items-center gap-3">
+                <a href="/projects" class="text-xs font-mono text-muted uppercase tracking-widest hover:text-text transition-colors">/projects</a>
+                <span class="text-xs font-mono text-muted uppercase tracking-widest">/</span>
+                <span class="text-xs font-mono text-text uppercase tracking-widest">photo-layouting-engine</span>
+                
+                                    <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-blue-500/20 text-blue-300 border border-blue-500/30 ml-2" data-id="SOFTWARE ENGINEERING" data-en="SOFTWARE ENGINEERING">SOFTWARE ENGINEERING</span>
+                            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]" data-id="Photo Layouting Engine" data-en="Photo Layouting Engine">
+                Photo Layouting Engine            </h1>
+        </div>
+
+        <!-- Right: Meta Data Grid -->
+        <div class="w-full lg:w-[400px] grid grid-cols-2 gap-x-8 gap-y-6 text-sm font-mono border-t lg:border-t-0 lg:border-l border-border pt-8 lg:pt-0 lg:pl-8">
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Kategori" data-en="Category">Category</span>
+                <span class="text-text font-medium">Web Development</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Tanggal" data-en="Date">Date</span>
+                <span class="text-text font-medium">Nov 2025</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Metodologi" data-en="Methodology">Methodology</span>
+                <span class="text-text font-medium">STAR Method</span>
+            </div>
+            <div class="flex flex-col gap-1">
+                <span class="text-xs uppercase tracking-widest text-muted" data-id="Peran / Tingkat" data-en="Role / Level">Role / Level</span>
+                <span class="text-text font-medium">Intermediate</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. RECRUITER-FOCUSED METRICS / IMPACT BANNER (TOP POSITION) -->
+<section class="px-6 py-8">
+    <div class="max-w-6xl mx-auto bg-surface border border-border/80 rounded-2xl p-6 md:p-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 divide-y md:divide-y-0 md:divide-x divide-border">
+            <div class="flex flex-col items-center text-center gap-1.5 pt-4 md:pt-0">
+                <span class="text-4xl md:text-5xl font-bold tracking-tighter text-emerald-400">40%</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-wider" data-id="Lebih Cepat" data-en="Faster Processing">
+                    Faster Processing                </span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-1.5 pt-4 md:pt-0">
+                <span class="text-4xl md:text-5xl font-bold tracking-tighter text-blue-400">&lt;1%</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-wider" data-id="Tingkat Error" data-en="Error Rate">
+                    Error Rate                </span>
+            </div>
+            <div class="flex flex-col items-center text-center gap-1.5 pt-4 md:pt-0">
+                <span class="text-4xl md:text-5xl font-bold tracking-tighter text-accent">100%</span>
+                <span class="text-xs font-mono text-muted uppercase tracking-wider" data-id="Terdigitalisasi" data-en="Digitalized">
+                    Digitalized                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Hero Main Image -->
+<section class="px-6 pb-16">
+    <div class="max-w-6xl mx-auto">
+        <div class="w-full aspect-[21/9] bg-surface border border-border rounded-2xl overflow-hidden relative group cursor-pointer" onclick="openProjectLightbox(0)">
+            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                            <img src="/uploads/1789835420_0_Gemini_Generated_Image_v53u3iv53u3iv53u.jpg" alt="Photo Layouting Engine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity bg-black/70 backdrop-blur-md px-3 py-1.5 rounded-lg text-xs font-mono text-white flex items-center gap-1.5 border border-white/10">
+                    <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                    <span data-id="Perbesar Foto" data-en="Zoom Image">Zoom Image</span>
+                </div>
+                    </div>
+    </div>
+</section>
+
+<!-- 3. PROJECT OVERVIEW -->
+    <section class="py-16 px-6 border-y border-border bg-surface/30">
+        <div class="max-w-4xl mx-auto text-center space-y-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-muted" data-id="Ikhtisar Eksekutif" data-en="Executive Summary">
+                Executive Summary            </span>
+            <p class="text-xl md:text-2xl text-text font-light leading-relaxed opacity-95" data-id="Proyek ini dikembangkan berdasarkan masalah nyata yang saya temukan saat mengikuti program magang nasional di Turikale Print. Selama masa magang, saya mengamati adanya bottleneck pada proses pelayanan cetak pasfoto harian. Operator menghabiskan sekitar 5-10 menit per pesanan hanya untuk memindahkan foto, menghapus latar belakang, menyesuaikan warna, dan menyusun tata letak (layout) cetak di Photoshop. Aplikasi web ini dibangun untuk mengotomatisasi alur kerja tersebut menjadi satu proses terpusat yang jauh lebih cepat." data-en="This project was developed based on real problems that I found while participating in the national internship program at Turikale Print. During my internship, I observed a bottleneck in the daily photo printing service process. Operators spend about 5-10 minutes per order just to move photos, remove backgrounds, adjust colors, and lay out prints in Photoshop. The web app is built to automate those workflows into one, much faster, centralized process.">
+                This project was developed based on real problems that I found while participating in the national internship program at Turikale Print. During my internship, I observed a bottleneck in the daily photo printing service process. Operators spend about 5-10 minutes per order just to move photos, remove backgrounds, adjust colors, and lay out prints in Photoshop. The web app is built to automate those workflows into one, much faster, centralized process.            </p>
+        </div>
+    </section>
+
+<!-- 4. CORE STORY CONTENT (STAR vs MAKER'S STORY) -->
+<article class="py-24 px-6 space-y-24">
+    
+    <!-- Dynamic Methodology Steps (STAR / EDP) -->
+                        <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4 flex flex-col gap-3">
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Situasi &amp; Masalah" data-en="01 / Situation">
+                        01 / Situation                    </span>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-accent shrink-0">
+                            <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+                        </div>
+                        <h2 class="text-3xl font-medium text-text" data-id="Situation" data-en="Situation">
+                            Situation                        </h2>
+                    </div>
+                </div>
+                <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
+                    <div class="bg-surface/60 border border-border/80 p-6 md:p-8 rounded-xl shadow-sm">
+                        <p class="text-text/95 leading-relaxed font-sans text-base md:text-lg" data-id="Proses operasional di studio percetakan melambat karena panjangnya alur kerja pencetakan pasfoto. Operator harus bergantian menggunakan layanan penghapus latar belakang daring dan perangkat lunak desain desktop. Selain itu, tidak ada sistem terotomatisasi yang menghitung jarak garis potong atau mengoptimalkan pemanfaatan ruang kosong pada kertas cetak." data-en="The operational process in the printing studio is slowed down due to the length of the photo printing workflow. Operators should alternate using online background eraser services and desktop design software. In addition, there is no automated system that calculates cutting line spacing or optimizes the utilization of free space on printed paper.">
+                            The operational process in the printing studio is slowed down due to the length of the photo printing workflow. Operators should alternate using online background eraser services and desktop design software. In addition, there is no automated system that calculates cutting line spacing or optimizes the utilization of free space on printed paper.                        </p>
+                    </div>
+                </div>
+            </section>
+                                <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4 flex flex-col gap-3">
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Tugas &amp; Sasaran" data-en="02 / Task">
+                        02 / Task                    </span>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-accent shrink-0">
+                            <i data-lucide="target" class="w-4 h-4"></i>
+                        </div>
+                        <h2 class="text-3xl font-medium text-text" data-id="Task" data-en="Task">
+                            Task                        </h2>
+                    </div>
+                </div>
+                <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
+                    <div class="bg-surface/60 border border-border/80 p-6 md:p-8 rounded-xl shadow-sm">
+                        <p class="text-text/95 leading-relaxed font-sans text-base md:text-lg" data-id="Tujuannya adalah membangun sebuah alat komputasi berbasis web yang dapat menggantikan fungsi esensial dari perangkat lunak desain desktop untuk kebutuhan cetak studio. Tantangan teknis utamanya adalah merancang sistem yang mampu mengeksekusi gambar beresolusi tinggi dan integrasi AI, tanpa membebani biaya operasional studio dengan penyewaan server komputasi grafis (GPU)." data-en="The goal is to build a web-based computing tool that can replace the essential functionality of desktop design software for studio print needs. The main technical challenge was designing a system capable of executing high-resolution images and AI integration, without burdening studio operational costs with the rental of a graphics computing server (GPU).">
+                            The goal is to build a web-based computing tool that can replace the essential functionality of desktop design software for studio print needs. The main technical challenge was designing a system capable of executing high-resolution images and AI integration, without burdening studio operational costs with the rental of a graphics computing server (GPU).                        </p>
+                    </div>
+                </div>
+            </section>
+                                <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4 flex flex-col gap-3">
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Aksi &amp; Implementasi" data-en="03 / Action">
+                        03 / Action                    </span>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-accent shrink-0">
+                            <i data-lucide="cpu" class="w-4 h-4"></i>
+                        </div>
+                        <h2 class="text-3xl font-medium text-text" data-id="Action" data-en="Action">
+                            Action                        </h2>
+                    </div>
+                </div>
+                <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
+                    <div class="bg-surface/60 border border-border/80 p-6 md:p-8 rounded-xl shadow-sm">
+                        <p class="text-text/95 leading-relaxed font-sans text-base md:text-lg" data-id="Pendekatan yang diambil adalah mendelegasikan seluruh proses komputasi ke sisi klien (browser) menggunakan ekosistem Vanilla JavaScript:
+
+1. Format Handling: Mengintegrasikan heic2any agar sistem dapat membaca dan mengonversi format foto HEIC bawaan iPhone secara lokal di mesin kasir.
+
+2. Edge AI Processing: Memanfaatkan model AI @imgly berbasis WebAssembly (WASM). Model ini diunduh ke cache browser untuk menjalankan deteksi dan penghapusan latar belakang menggunakan CPU perangkat lokal, menghilangkan kewajiban unggah (upload) ke server.
+
+3. Canvas Engine: Mengimplementasikan manipulasi piksel melalui HTML5 Canvas (menggunakan metode komposit destination-out dan source-in) untuk menyediakan fitur kuas (brush/eraser) manual.
+
+4. Auto-Layout Algorithm: Mengembangkan algoritma penyusunan gambar dinamis (packing algorithm) yang melakukan kalkulasi konversi milimeter ke piksel, serta menyisipkan margin dan panduan potong (cutting marks) secara otomatis pada kanvas cetak." data-en="The approach taken is to delegate the entire computational process to the client side (browser) using the Vanilla JavaScript ecosystem:
+
+1. Format Handling: Integrates heic2any so the system can read and convert the iPhone&#039;s built-in HEIC photo format locally at the cash register.
+
+2. Edge AI Processing: Utilizes the WebAssembly (WASM) -based AI @ imgly model. This model is downloaded to the browser cache to perform background detection and removal using the local device CPU, eliminating the obligation to upload to the server.
+
+3. Canvas Engine: Implement pixel manipulation via HTML5 Canvas (using destination-out and source-in composite methods) to provide manual brush/eraser features.
+
+4. Auto-Layout Algorithm: Develops a dynamic image compilation algorithm (packing algorithm) that performs millimeter-to-pixel conversion calculations, as well as inserts margins and cutting marks automatically on the print canvas.">
+                            The approach taken is to delegate the entire computational process to the client side (browser) using the Vanilla JavaScript ecosystem:<br />
+<br />
+1. Format Handling: Integrates heic2any so the system can read and convert the iPhone&#039;s built-in HEIC photo format locally at the cash register.<br />
+<br />
+2. Edge AI Processing: Utilizes the WebAssembly (WASM) -based AI @ imgly model. This model is downloaded to the browser cache to perform background detection and removal using the local device CPU, eliminating the obligation to upload to the server.<br />
+<br />
+3. Canvas Engine: Implement pixel manipulation via HTML5 Canvas (using destination-out and source-in composite methods) to provide manual brush/eraser features.<br />
+<br />
+4. Auto-Layout Algorithm: Develops a dynamic image compilation algorithm (packing algorithm) that performs millimeter-to-pixel conversion calculations, as well as inserts margins and cutting marks automatically on the print canvas.                        </p>
+                    </div>
+                </div>
+            </section>
+                                <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                <div class="md:col-span-4 flex flex-col gap-3">
+                    <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Hasil &amp; Dampak" data-en="04 / Result">
+                        04 / Result                    </span>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-surface border border-border flex items-center justify-center text-accent shrink-0">
+                            <i data-lucide="trophy" class="w-4 h-4"></i>
+                        </div>
+                        <h2 class="text-3xl font-medium text-text" data-id="Result" data-en="Result">
+                            Result                        </h2>
+                    </div>
+                </div>
+                <div class="md:col-span-8 flex flex-col gap-6 text-lg text-muted font-light leading-relaxed">
+                    <div class="bg-surface/60 border border-border/80 p-6 md:p-8 rounded-xl shadow-sm">
+                        <p class="text-text/95 leading-relaxed font-sans text-base md:text-lg" data-id="Aplikasi ini memadatkan 6 langkah pengerjaan manual menjadi 1 antarmuka web tunggal, memangkas waktu pemrosesan dari sekitar 5-10 menit menjadi kurang dari 3 menit per pesanan. Platform ini berjalan secara lokal tanpa komunikasi backend untuk pemrosesan gambarnya, sehingga studio terbebas dari beban biaya server tambahan dan hambatan skalabilitas." data-en="The app compresses 6 steps of manual workmanship into 1 single web interface, cutting processing time from about 5-10 minutes to less than 3 minutes per order. The platform runs locally without backend communication for its image processing, freeing the studio from the burden of additional server costs and scalability barriers.">
+                            The app compresses 6 steps of manual workmanship into 1 single web interface, cutting processing time from about 5-10 minutes to less than 3 minutes per order. The platform runs locally without backend communication for its image processing, freeing the studio from the burden of additional server costs and scalability barriers.                        </p>
+                    </div>
+                </div>
+            </section>
+            
+    <!-- System Architecture / Schematic Diagram -->
+            <section class="max-w-6xl mx-auto flex flex-col gap-8">
+            <div class="flex flex-col gap-2 text-center items-center">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="Arsitektur Sistem" data-en="System Architecture">
+                    System Architecture                </span>
+                <h2 class="text-3xl font-medium text-text" data-id="Arsitektur Sistem" data-en="System Architecture">
+                    System Architecture                </h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto text-center text-muted font-light leading-relaxed">
+                <p data-id="Arsitektur dibangun dengan pendekatan Zero-Backend Processing. State dan logika aplikasi dikelola di sisi klien menggunakan Vanilla JavaScript (const App = {...}). Data gambar dimuat ke RAM (Blob URL), dimanipulasi, dan langsung diteruskan ke mesin pencetak (window.print()). Aplikasi memanfaatkan injeksi @media print CSS untuk memastikan skala cetak 1:1 akurat dengan dimensi kertas fisik. PHP hanya difungsikan ringan untuk pencatatan feedback dan analitik." data-en="Architecture is built with aZero-Backend Processing approach. Application state and logic are managed on the client side using Vanilla JavaScript (const App = {...}). Image data is loaded into RAM (Blob URL), manipulated, and passed directly to the printer (window.print ()). Applications utilize @media print CSS injection to ensure 1:1 print scale is accurate to physical paper dimensions. PHP is only used lightly for recording feedback and analytics.">
+                    Architecture is built with aZero-Backend Processing approach. Application state and logic are managed on the client side using Vanilla JavaScript (const App = {...}). Image data is loaded into RAM (Blob URL), manipulated, and passed directly to the printer (window.print ()). Applications utilize @media print CSS injection to ensure 1:1 print scale is accurate to physical paper dimensions. PHP is only used lightly for recording feedback and analytics.                </p>
+            </div>
+        </section>
+    
+    <!-- 5. IMPLEMENTATION HIGHLIGHTS & TECH STACK -->
+    <section class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div class="md:col-span-4 flex flex-col gap-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="Stack Teknologi" data-en="Tech Stack">
+                Tech Stack            </span>
+            <h2 class="text-3xl font-medium text-text" data-id="Teknologi & Alat" data-en="Technologies & Stack">Technologies & Stack</h2>
+        </div>
+        <div class="md:col-span-8 flex flex-wrap gap-3">
+                                                <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="server" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">PHP</span>
+                    </div>
+                                    <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="code" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">JavaScript</span>
+                    </div>
+                                    <div class="px-4 py-2.5 rounded-lg border border-border bg-surface flex items-center gap-2.5">
+                        <i data-lucide="Layout" class="w-4 h-4 text-muted"></i>
+                        <span class="text-xs font-mono text-text">Tailwind CSS</span>
+                    </div>
+                                    </div>
+    </section>
+
+    <!-- 6. MULTI-IMAGE GALLERY / PROJECT SCREENSHOT SHOWCASE -->
+                    <section class="max-w-6xl mx-auto flex flex-col gap-8">
+            <div class="flex items-center gap-4">
+                <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="Galeri Tangkapan Layar & Foto" data-en="Visual Gallery & Screenshots">Visual Gallery & Screenshots</span>
+                <div class="h-[1px] flex-grow bg-border"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                                        <div onclick="openProjectLightbox(0)" 
+                         class="col-span-full group relative cursor-pointer overflow-hidden rounded-lg">
+                        
+                        <img src="/uploads/1789835420_0_Gemini_Generated_Image_v53u3iv53u3iv53u.jpg" 
+                             alt="Project Screenshot 1" 
+                             class="w-full h-auto object-cover rounded-lg border border-border/50 transition-all duration-300 hover:scale-[1.02] hover:opacity-90 group-hover:scale-[1.02] group-hover:opacity-90">
+                        
+                        <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                            <span class="p-2 rounded-lg bg-black/70 backdrop-blur-md text-white border border-white/10 flex items-center justify-center shadow-lg">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                                                    <div class="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <span class="text-[10px] font-mono text-muted bg-black/70 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">1 / 3</span>
+                            </div>
+                                            </div>
+                                                        <div onclick="openProjectLightbox(1)" 
+                         class=" group relative cursor-pointer overflow-hidden rounded-lg">
+                        
+                        <img src="/uploads/1789835466_0_Gemini_Generated_Image_gzfqm1gzfqm1gzfq.jpg" 
+                             alt="Project Screenshot 2" 
+                             class="w-full h-auto object-cover rounded-lg border border-border/50 transition-all duration-300 hover:scale-[1.02] hover:opacity-90 group-hover:scale-[1.02] group-hover:opacity-90">
+                        
+                        <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                            <span class="p-2 rounded-lg bg-black/70 backdrop-blur-md text-white border border-white/10 flex items-center justify-center shadow-lg">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                                                    <div class="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <span class="text-[10px] font-mono text-muted bg-black/70 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">2 / 3</span>
+                            </div>
+                                            </div>
+                                                        <div onclick="openProjectLightbox(2)" 
+                         class=" group relative cursor-pointer overflow-hidden rounded-lg">
+                        
+                        <img src="/uploads/1789835486_0_Gemini_Generated_Image_9gc8a69gc8a69gc8.jpg" 
+                             alt="Project Screenshot 3" 
+                             class="w-full h-auto object-cover rounded-lg border border-border/50 transition-all duration-300 hover:scale-[1.02] hover:opacity-90 group-hover:scale-[1.02] group-hover:opacity-90">
+                        
+                        <div class="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                            <span class="p-2 rounded-lg bg-black/70 backdrop-blur-md text-white border border-white/10 flex items-center justify-center shadow-lg">
+                                <i data-lucide="zoom-in" class="w-4 h-4"></i>
+                            </span>
+                        </div>
+
+                                                    <div class="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                                <span class="text-[10px] font-mono text-muted bg-black/70 backdrop-blur-md px-2 py-0.5 rounded border border-white/10">3 / 3</span>
+                            </div>
+                                            </div>
+                            </div>
+        </section>
+    
+    <!-- 7. RECRUITER-FRIENDLY ACCORDION: CHALLENGES, DECISIONS, LESSONS & ROADMAP -->
+    <section class="max-w-5xl mx-auto flex flex-col gap-6 pt-6 border-t border-border">
+        
+        <div class="flex items-center gap-4 mb-2">
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="Detail Teknis & Retrospektif" data-en="Technical Deep-Dive & Retrospective">Technical Deep-Dive & Retrospective</span>
+            <div class="h-[1px] flex-grow bg-border"></div>
+        </div>
+
+        <div class="space-y-4 font-mono text-sm">
+            
+            <!-- Accordion Item 1: Challenges & Obstacles -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="alert-circle" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Tantangan & Hambatan Teknis" data-en="Challenges & Technical Obstacles">Challenges & Technical Obstacles</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 text-muted font-sans font-light leading-relaxed text-sm">
+                        <p class="mt-4" data-id="Tantangan teknis selama pengembangan adalah menangani potensi memory leak pada peramban saat operator memproses gambar beresolusi sangat besar secara berurutan. Solusinya melibatkan implementasi garbage collection secara manual menggunakan URL.revokeObjectURL() dan pembatasan resolusi scratch canvas agar performa peramban tetap stabil." data-en="A technical challenge during development is addressing potential browser memory leaks when operators process very large resolution images in sequence. The solution involves implementing garbage collection manually using URL.revokeObjectURL() and limiting scratch canvas resolution to keep browser performance stable.">
+                            A technical challenge during development is addressing potential browser memory leaks when operators process very large resolution images in sequence. The solution involves implementing garbage collection manually using URL.revokeObjectURL() and limiting scratch canvas resolution to keep browser performance stable.                        </p>
+                    </div>
+                </details>
+            
+            <!-- Accordion Item 2: Engineering Decisions -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="git-commit" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Keputusan Rekayasa & Trade-Off" data-en="Engineering Decisions & Trade-Offs">Engineering Decisions & Trade-Offs</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 text-muted font-sans font-light leading-relaxed text-sm">
+                                                    <div class="space-y-4">
+                                                                    <div class="mt-4 bg-background/50 border border-border p-4 rounded-lg">
+                                        <h4 class="font-mono font-semibold text-text mb-1.5" data-id="Mengapa mengeksekusi Model AI di Client-Side (Browser) alih-alih di Server Python/PHP?" data-en="Why execute AI Model on Client-Side (Browser) insteadof Python/PHP Server?">Why execute AI Model on Client-Side (Browser) insteadof Python/PHP Server?</h4>
+                                        <p class="text-muted leading-relaxed font-light" data-id="Pemrosesan AI di server memerlukan biaya infrastruktur (GPU) yang membebani operasional studio, ditambah risiko latensi saat mengunggah file besar. Dengan WebAssembly (WASM), model AI diunduh sekali ke cache browser (sekitar 15MB), dan proses penghapusan latar belakang dieksekusi secara instan oleh perangkat keras lokal operator tanpa antrean pemrosesan server." data-en="Processing AI on servers requires infrastructure costs (GPUs) that burden studio operations, plus the risk of latency when uploading large files. With WebAssembly (WASM), the AI model is downloaded once to the browser cache (about 15MB), and the background removal process is executed instantly by the operator&#039;s local hardware without server processing queues.">Processing AI on servers requires infrastructure costs (GPUs) that burden studio operations, plus the risk of latency when uploading large files. With WebAssembly (WASM), the AI model is downloaded once to the browser cache (about 15MB), and the background removal process is executed instantly by the operator&#039;s local hardware without server processing queues.</p>
+                                    </div>
+                                                                    <div class="mt-4 bg-background/50 border border-border p-4 rounded-lg">
+                                        <h4 class="font-mono font-semibold text-text mb-1.5" data-id="Mengapa membangun mesin Canvas menggunakan Vanilla JS ketimbang library seperti Fabric.js?" data-en="Why build a Canvas engine using Vanilla JS instead of a library like Fabric.js?">Why build a Canvas engine using Vanilla JS instead of a library like Fabric.js?</h4>
+                                        <p class="text-muted leading-relaxed font-light" data-id="Prioritas utamanya adalah performa dan ukuran muatan awal (payload) yang ringan. Karena kebutuhannya difokuskan pada cropping presisi, filter warna, dan kalkulasi tata letak, membangun fungsi menggunakan Vanilla JS dapat menghindari ratusan KB kode tidak terpakai dari library pihak ketiga. Hal ini memastikan aplikasi berjalan sangat responsif bahkan di perangkat kasir dengan spesifikasi standar." data-en="The main priority is the performance and size of the initial payload (payload) is light. Because its needs are focused on precision cropping, color filters, and layout calculations, building functions using Vanilla JS can avoid hundreds of KB of unused code from third-party libraries. This ensures the application runs very responsive even on cash register devices with standard specifications.">The main priority is the performance and size of the initial payload (payload) is light. Because its needs are focused on precision cropping, color filters, and layout calculations, building functions using Vanilla JS can avoid hundreds of KB of unused code from third-party libraries. This ensures the application runs very responsive even on cash register devices with standard specifications.</p>
+                                    </div>
+                                                            </div>
+                                            </div>
+                </details>
+            
+            <!-- Accordion Item 3: Lessons Learned -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="book-open" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Pembelajaran & Catatan Teknis" data-en="Lessons Learned & Retrospective">Lessons Learned & Retrospective</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 font-sans text-sm">
+                        <ul class="mt-4 space-y-2 text-muted font-light">
+                                                            <li class="flex items-start gap-2.5">
+                                    <i data-lucide="check" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                                    <span data-id="Proyek ini membuktikan skalabilitas dan kemampuan arsitektur perangkat lunak sisi klien (client-side) dalam memecahkan hambatan operasional nyata. Optimalisasi algoritma lokal dan manajemen memori peramban secara efektif dapat menggantikan kebutuhan infrastruktur server yang mahal." data-en="This project proves the scalability and capability of client-side software architecture in solving real operational barriers. Local algorithm optimization and browser memory management can effectively replace the need for expensive server infrastructure.">
+                                        This project proves the scalability and capability of client-side software architecture in solving real operational barriers. Local algorithm optimization and browser memory management can effectively replace the need for expensive server infrastructure.                                    </span>
+                                </li>
+                                                    </ul>
+                    </div>
+                </details>
+            
+            <!-- Accordion Item 4: Future Improvements / Roadmap -->
+                            <details class="group bg-surface border border-border rounded-xl overflow-hidden transition-all duration-200">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer select-none hover:bg-white/5 transition-colors">
+                        <div class="flex items-center gap-3">
+                            <i data-lucide="map" class="w-4 h-4 text-accent"></i>
+                            <span class="font-bold text-text" data-id="Rencana Pengembangan (Roadmap)" data-en="Future Improvements & Roadmap">Future Improvements & Roadmap</span>
+                        </div>
+                        <i data-lucide="chevron-down" class="w-4 h-4 text-muted group-open:rotate-180 transition-transform duration-200"></i>
+                    </summary>
+                    <div class="p-5 pt-0 border-t border-border/50 font-sans text-sm">
+                        <ul class="mt-4 space-y-2 text-muted font-light">
+                                                            <li class="flex items-center gap-2.5">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-blue-400 shrink-0"></i>
+                                    <span data-id="Implementasi standar Progressive Web App (PWA) dengan intersep Service Worker agar aplikasi dapat memuat dan berfungsi sepenuhnya secara offline, menjaga stabilitas operasional studio tanpa bergantung pada koneksi internet." data-en="Implementation of the Progressive Web App (PWA) standard with Service Worker intercept so that the application can load and function completely offline, maintaining the stability of studio operations without relying on an internet connection.">
+                                        Implementation of the Progressive Web App (PWA) standard with Service Worker intercept so that the application can load and function completely offline, maintaining the stability of studio operations without relying on an internet connection.                                    </span>
+                                </li>
+                                                    </ul>
+                    </div>
+                </details>
+            
+        </div>
+    </section>
+
+</article>
+
+<!-- 8. NEXT PROJECT -->
+
+<!-- PROJECT MULTI-IMAGE LIGHTBOX MODAL -->
+<div id="project-lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="relative max-w-5xl w-full flex flex-col items-center gap-4">
+        
+        <!-- Top bar -->
+        <div class="w-full flex items-center justify-between text-white font-mono text-xs px-2">
+            <span id="lb-counter" class="bg-white/10 px-3 py-1 rounded-full border border-white/10">1 / 1</span>
+            <button type="button" onclick="closeProjectLightbox()" class="p-2 rounded-lg bg-white/10 hover:bg-white/20 text-white transition-colors cursor-pointer" aria-label="Close">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+        </div>
+
+        <!-- Main Image with Prev/Next buttons -->
+        <div class="relative w-full h-[65vh] md:h-[75vh] flex items-center justify-center">
+            <button type="button" onclick="navigateLightbox(-1)" class="absolute left-2 md:left-4 z-10 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/10 transition-colors cursor-pointer">
+                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+            </button>
+
+            <img id="lb-image" src="#" alt="Enlarged Screenshot" class="max-w-full max-h-full object-contain rounded-xl shadow-2xl border border-border">
+
+            <button type="button" onclick="navigateLightbox(1)" class="absolute right-2 md:right-4 z-10 p-3 rounded-full bg-black/60 hover:bg-black/80 text-white border border-white/10 transition-colors cursor-pointer">
+                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <!-- Caption / Info -->
+        <div id="lb-caption" class="text-xs font-mono text-muted text-center max-w-xl"></div>
+    </div>
+</div>
+
+<script>
+    const projectGalleryData = [{"image":"/uploads/1789835420_0_Gemini_Generated_Image_v53u3iv53u3iv53u.jpg","caption":""},{"image":"/uploads/1789835466_0_Gemini_Generated_Image_gzfqm1gzfqm1gzfq.jpg","caption":""},{"image":"/uploads/1789835486_0_Gemini_Generated_Image_9gc8a69gc8a69gc8.jpg","caption":""}];
+    let currentLightboxIndex = 0;
+
+    function openProjectLightbox(index) {
+        if (!projectGalleryData || projectGalleryData.length === 0) return;
+        currentLightboxIndex = index;
+        updateLightboxView();
+        const modal = document.getElementById('project-lightbox-modal');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        if (window.lucide) window.lucide.createIcons();
+    }
+
+    function closeProjectLightbox() {
+        const modal = document.getElementById('project-lightbox-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+    }
+
+    function navigateLightbox(step) {
+        if (!projectGalleryData || projectGalleryData.length <= 1) return;
+        currentLightboxIndex = (currentLightboxIndex + step + projectGalleryData.length) % projectGalleryData.length;
+        updateLightboxView();
+    }
+
+    function updateLightboxView() {
+        const imgEl = document.getElementById('lb-image');
+        const counterEl = document.getElementById('lb-counter');
+        const captionEl = document.getElementById('lb-caption');
+
+        if (projectGalleryData[currentLightboxIndex]) {
+            const cur = projectGalleryData[currentLightboxIndex];
+            imgEl.src = cur.image;
+            counterEl.innerText = `${currentLightboxIndex + 1} / ${projectGalleryData.length}`;
+            captionEl.innerText = cur.caption || '';
+        }
+    }
+
+    document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('project-lightbox-modal');
+        if (modal && !modal.classList.contains('hidden')) {
+            if (e.key === 'Escape') closeProjectLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        }
+    });
+
+    const lbModalEl = document.getElementById('project-lightbox-modal');
+    if (lbModalEl) {
+        lbModalEl.addEventListener('click', function(e) {
+            if (e.target === this) closeProjectLightbox();
+        });
+    }
+</script>    </main>
+
+    <!-- Footer Component -->
+    <!-- views/components/footer.php -->
+<footer class="mt-auto border-t border-border bg-background/50 backdrop-blur-sm">
+    <div class="max-w-5xl mx-auto px-6 py-10 flex flex-col md:flex-row justify-between items-center gap-6 font-mono text-sm">
+        
+        <!-- Left: Headline & Direct Contact -->
+        <div class="flex flex-col gap-1 text-center md:text-left">
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="do something in a different way">
+                do something in a different way            </span>
+            <a href="mailto:" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
+                <span data-id="Hubungi Saya" data-en="2026">
+                    2026                </span>
+                <span class="text-muted/60">• </span>
+            </a>
+        </div>
+        
+        <!-- Right: Pure Minimalist Lucide Icon Badges -->
+        <div class="flex items-center gap-3">
+                            <a href="https://github.com/fagabondz" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
+                    <img src="/assets/images/github.png" alt="GitHub" class="w-5 h-5 object-contain hover:opacity-80 transition-opacity">
+                </a>
+                                            </div>
+
+    </div>
+</footer>
+    <!-- Module Initialization Scripts -->
+    <script src="/assets/js/navbar.js" type="module"></script>
+    <script>
+        // Initialize Lucide Icons globally
+        lucide.createIcons();
+    </script>
+</body>
+</html>

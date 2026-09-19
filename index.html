@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var lang = localStorage.getItem('portfolio_lang') || 'en';
+            document.documentElement.lang = lang;
+        })();
+    </script>
     <title>Engineering.</title>
     
     <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -82,9 +88,9 @@
                 </div>
 
                 <!-- Language Switcher Button (Desktop & Mobile) -->
-                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Switch Language" title="Switch Language">
-                    <span class="lang-flag text-sm leading-none select-none">🇺🇸</span>
-                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">EN</span>
+                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Ganti ke Bahasa Indonesia" title="Ganti ke Bahasa Indonesia">
+                    <span class="lang-flag text-sm leading-none select-none">🇮🇩</span>
+                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">ID</span>
                 </button>
 
                 <!-- Mobile Menu Toggle Button -->
@@ -126,26 +132,26 @@
     <!-- Hero Section -->
     <section id="hero" class="flex flex-col">
         <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-text leading-[1.1]">
-            <span data-id="Saya membangun sistem yang tangguh." data-en="I build resilient systems.">
-                Saya membangun sistem yang tangguh.            </span><br>
-            <span class="text-muted font-medium" data-id="Software Engineer." data-en="Software Engineer.">
-                Software Engineer.            </span>
+            <span data-id="Menghidupkan ide menjadi sistem yang berfungsi" data-en="Turning ideas into functional systems">
+                Turning ideas into functional systems            </span><br>
+            <span class="text-muted font-medium" data-id="Maker &amp; Developer" data-en="Makers &amp; Developers">
+                Makers &amp; Developers            </span>
         </h1>
     </section>
 
     <!-- Featured Projects (Gallery) -->
     <section id="projects" class="flex flex-col gap-10">
         <div class="flex items-center gap-4">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Karya Pilihan" data-en="01 / Selected Works">01 / Karya Pilihan</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="01 / Karya Pilihan" data-en="01 / Selected Works">01 / Selected Works</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
         <!-- Gallery Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                                                    <a href="/projects/turikaleprint-automated-layouting-web-app" class="group flex flex-col gap-4 cursor-pointer ">
+                                                                    <a href="/projects/photo-layouting-engine" class="group flex flex-col gap-4 cursor-pointer ">
                         <div class="relative w-full aspect-[4/3] md:aspect-video rounded-xl bg-surface border border-border overflow-hidden">
                             <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                                                            <img src="/uploads/1788031743_Screenshot10.png" alt="TurikalePrint: Automated Layouting Web App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                                                            <img src="/uploads/1789835420_0_Gemini_Generated_Image_v53u3iv53u3iv53u.jpg" alt="Photo Layouting Engine" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
                                                         
                             <!-- Project Category Type Badge -->
                             <div class="absolute top-3 right-3 z-20">
@@ -153,16 +159,16 @@
                                                             </div>
                         </div>
                         <div class="flex flex-col gap-1">
-                            <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors" data-id="TurikalePrint: Automated Layouting Web App" data-en="TurikalePrint: Automated Layouting Web App">
-                                TurikalePrint: Automated Layouting Web App                            </h3>
-                            <span class="text-sm font-mono text-muted">Fullstack Developer / 2026</span>
+                            <h3 class="text-lg font-medium text-text group-hover:text-accent transition-colors" data-id="Photo Layouting Engine" data-en="Photo Layouting Engine">
+                                Photo Layouting Engine                            </h3>
+                            <span class="text-sm font-mono text-muted">Intermediate / 2025</span>
                         </div>
                     </a>
                                     </div>
         
         <div class="flex justify-start mt-4">
             <a href="/projects" class="text-sm font-mono text-muted hover:text-text transition-colors flex items-center gap-2 group">
-                <span data-id="Lihat semua proyek" data-en="View all projects">Lihat semua proyek</span>
+                <span data-id="Lihat semua proyek" data-en="View all projects">View all projects</span>
                 <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
             </a>
         </div>
@@ -171,57 +177,18 @@
     <!-- Featured Certifications (Gallery) -->
     <section id="certifications" class="flex flex-col gap-10">
         <div class="flex items-center gap-4">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Sertifikasi" data-en="02 / Certifications">02 / Sertifikasi</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="02 / Sertifikasi" data-en="02 / Certifications">02 / Certifications</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                                                                    <div onclick="openPublicCertModal('/uploads/certifications/cert_20260829_204004_2b1495ad.pdf', 'Google Cybersecurity', 'Google', '2026', '', true)" class="group flex flex-col gap-3 cursor-pointer">
-                        <div class="relative w-full aspect-[3/4] md:aspect-[4/3] rounded-xl bg-surface border border-border overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                                                                                                <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
-                                        <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest" data-id="Sertifikat PDF" data-en="PDF Certificate">Sertifikat PDF</span>
-                                    </div>
-                                                                                    </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-sm font-medium text-text group-hover:text-accent transition-colors line-clamp-2">Google Cybersecurity</h3>
-                            <span class="text-xs font-mono text-muted mt-1">Google</span>
-                        </div>
                     </div>
-                                                        <div onclick="openPublicCertModal('/uploads/certifications/cert_20260829_204100_8b343ef8.pdf', 'MikroTik', 'MikroTik', '2024', '', true)" class="group flex flex-col gap-3 cursor-pointer">
-                        <div class="relative w-full aspect-[3/4] md:aspect-[4/3] rounded-xl bg-surface border border-border overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                                                                                                <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
-                                        <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest" data-id="Sertifikat PDF" data-en="PDF Certificate">Sertifikat PDF</span>
-                                    </div>
-                                                                                    </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-sm font-medium text-text group-hover:text-accent transition-colors line-clamp-2">MikroTik</h3>
-                            <span class="text-xs font-mono text-muted mt-1">MikroTik</span>
-                        </div>
-                    </div>
-                                                        <div onclick="openPublicCertModal('/uploads/certifications/cert_20260829_204151_4a4c25c8.pdf', 'Google AI Essentials', 'Google', '2026', '', true)" class="group flex flex-col gap-3 cursor-pointer">
-                        <div class="relative w-full aspect-[3/4] md:aspect-[4/3] rounded-xl bg-surface border border-border overflow-hidden">
-                            <div class="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                                                                                                <div class="w-full h-full flex flex-col items-center justify-center bg-red-500/10 p-4 text-center group-hover:scale-105 transition-transform duration-500">
-                                        <i data-lucide="file-text" class="w-10 h-10 text-red-400 mb-2"></i>
-                                        <span class="text-[10px] font-mono font-bold text-red-400 uppercase tracking-widest" data-id="Sertifikat PDF" data-en="PDF Certificate">Sertifikat PDF</span>
-                                    </div>
-                                                                                    </div>
-                        <div class="flex flex-col">
-                            <h3 class="text-sm font-medium text-text group-hover:text-accent transition-colors line-clamp-2">Google AI Essentials</h3>
-                            <span class="text-xs font-mono text-muted mt-1">Google</span>
-                        </div>
-                    </div>
-                                    </div>
     </section>
 
     <!-- Skills / Core Stack -->
     <section id="skills" class="flex flex-col gap-8">
         <div class="flex items-center gap-4">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Keahlian Utama" data-en="03 / Core Stack">03 / Keahlian Utama</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="03 / Keahlian Utama" data-en="03 / Core Stack">03 / Core Stack</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
@@ -234,22 +201,24 @@
                                     <span class="px-4 py-2 text-sm font-mono text-text bg-surface border border-border rounded-full hover:border-muted hover:bg-white/5 transition-all">Linux</span>
                                     <span class="px-4 py-2 text-sm font-mono text-text bg-surface border border-border rounded-full hover:border-muted hover:bg-white/5 transition-all">Cisco</span>
                                     <span class="px-4 py-2 text-sm font-mono text-text bg-surface border border-border rounded-full hover:border-muted hover:bg-white/5 transition-all">MikroTik</span>
+                                    <span class="px-4 py-2 text-sm font-mono text-text bg-surface border border-border rounded-full hover:border-muted hover:bg-white/5 transition-all">Tailwind CSS</span>
+                                    <span class="px-4 py-2 text-sm font-mono text-text bg-surface border border-border rounded-full hover:border-muted hover:bg-white/5 transition-all">Python</span>
                                     </div>
     </section>
 
     <!-- About Me Teaser -->
     <section id="about" class="flex flex-col gap-6">
         <div class="flex items-center gap-4 mb-2">
-            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Ringkasan" data-en="04 / Brief">04 / Ringkasan</span>
+            <span class="text-xs font-mono text-muted uppercase tracking-widest" data-id="04 / Ringkasan" data-en="04 / Brief">04 / Brief</span>
             <div class="h-[1px] flex-grow bg-border"></div>
         </div>
         
-        <p class="text-lg md:text-2xl text-text leading-relaxed max-w-3xl font-light opacity-90" data-id="Saya mengubah masalah operasional dunia nyata menjadi solusi perangkat lunak yang andal, skalabel, dan efisien." data-en="I turn real-world operational bottlenecks into resilient, scalable, and highly efficient software systems.">
-            Saya mengubah masalah operasional dunia nyata menjadi solusi perangkat lunak yang andal, skalabel, dan efisien.        </p>
-        
+                            <p class="text-lg md:text-2xl text-text leading-relaxed max-w-3xl font-light opacity-90" data-id="Selain merancang arsitektur perangkat lunak yang andal dan skalabel, saya juga seorang maker yang aktif melakukan riset &amp; pengembangan (Garage R&amp;D) untuk rekayasa fisik/mekanikal—seperti perakitan buggy, drone, dan purwarupa eksperimental." data-en="Beyond engineering resilient and scalable software systems, I am also a hands-on maker actively conducting garage R&amp;D for physical and mechanical builds—such as custom buggies, drones, and experimental hardware prototypes.">
+                Beyond engineering resilient and scalable software systems, I am also a hands-on maker actively conducting garage R&amp;D for physical and mechanical builds—such as custom buggies, drones, and experimental hardware prototypes.            </p>
+                
         <div class="mt-6">
             <a href="/about" class="text-sm font-mono text-muted hover:text-text transition-colors flex items-center gap-2 group">
-                <span data-id="Baca selengkapnya" data-en="Read full story">Baca selengkapnya</span>
+                <span data-id="Baca selengkapnya" data-en="Read full story">Read full story</span>
                 <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
             </a>
         </div>
@@ -262,7 +231,7 @@
     <div class="relative bg-surface border border-border rounded-2xl max-w-3xl w-full p-6 space-y-4 font-mono shadow-2xl">
         <div class="flex items-start justify-between border-b border-border pb-3">
             <div>
-                <h3 id="pub-cert-title" class="text-base md:text-lg font-bold text-text" data-id="Sertifikat" data-en="Certificate">Sertifikat</h3>
+                <h3 id="pub-cert-title" class="text-base md:text-lg font-bold text-text" data-id="Sertifikat" data-en="Certificate">Certificate</h3>
                 <p id="pub-cert-meta" class="text-xs text-muted mt-0.5"></p>
             </div>
             <button type="button" onclick="closePublicCertModal()" class="text-muted hover:text-text p-1.5 rounded-lg hover:bg-white/5 transition-colors" aria-label="Close modal">
@@ -280,12 +249,12 @@
             <div id="pub-cert-direct-download" class="hidden">
                 <a id="pub-cert-file-link" href="#" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-muted hover:text-text">
                     <i data-lucide="download" class="w-3.5 h-3.5"></i>
-                    <span data-id="Buka / Unduh File" data-en="Open / Download File">Buka / Unduh File</span>
+                    <span data-id="Buka / Unduh File" data-en="Open / Download File">Open / Download File</span>
                 </a>
             </div>
             <div id="pub-cert-link-wrapper" class="hidden ml-auto">
                 <a id="pub-cert-url" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs text-accent hover:underline">
-                    <span data-id="Verifikasi Kredensial" data-en="Verify Credential">Verifikasi Kredensial</span>
+                    <span data-id="Verifikasi Kredensial" data-en="Verify Credential">Verify Credential</span>
                     <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
                 </a>
             </div>
@@ -370,12 +339,12 @@
         
         <!-- Left: Headline & Direct Contact -->
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something resilient?">
-                Siap membangun sistem yang tangguh?            </span>
-            <a href="mailto:arifmazhuri@gmail.com" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
-                <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
-                    Hubungi Saya                </span>
-                <span class="text-muted/60">• arifmazhuri@gmail.com</span>
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="do something in a different way">
+                do something in a different way            </span>
+            <a href="mailto:" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
+                <span data-id="Hubungi Saya" data-en="2026">
+                    2026                </span>
+                <span class="text-muted/60">• </span>
             </a>
         </div>
         
@@ -384,13 +353,7 @@
                             <a href="https://github.com/fagabondz" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
                     <img src="/assets/images/github.png" alt="GitHub" class="w-5 h-5 object-contain hover:opacity-80 transition-opacity">
                 </a>
-                                        <a href="www.linkedin.com/in/arifmazhuri" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="LinkedIn Profile" title="LinkedIn">
-                    <img src="/assets/images/linkedin.svg" alt="LinkedIn" class="w-5 h-5 object-contain hover:opacity-80 transition-opacity">
-                </a>
-                                        <a href="mailto:arifmazhuri@gmail.com" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="Send Email" title="Email">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                </a>
-                    </div>
+                                            </div>
 
     </div>
 </footer>

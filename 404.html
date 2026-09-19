@@ -1,8 +1,14 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        (function() {
+            var lang = localStorage.getItem('portfolio_lang') || 'en';
+            document.documentElement.lang = lang;
+        })();
+    </script>
     <title>Engineering.</title>
     
     <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -82,9 +88,9 @@
                 </div>
 
                 <!-- Language Switcher Button (Desktop & Mobile) -->
-                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Switch Language" title="Switch Language">
-                    <span class="lang-flag text-sm leading-none select-none">🇺🇸</span>
-                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">EN</span>
+                <button type="button" class="lang-switcher-btn group flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-border bg-surface/70 hover:bg-surface hover:border-accent/40 text-xs font-mono text-text transition-all duration-200 cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-accent" aria-label="Ganti ke Bahasa Indonesia" title="Ganti ke Bahasa Indonesia">
+                    <span class="lang-flag text-sm leading-none select-none">🇮🇩</span>
+                    <span class="lang-label font-bold text-[11px] text-muted group-hover:text-text transition-colors">ID</span>
                 </button>
 
                 <!-- Mobile Menu Toggle Button -->
@@ -125,7 +131,7 @@
         
         <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface border border-border text-text font-mono text-xs shadow-sm">
             <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
-            <span data-id="Galat 404: Halaman Tidak Ditemukan" data-en="Error 404: Page Not Found">Galat 404: Halaman Tidak Ditemukan</span>
+            <span data-id="Galat 404: Halaman Tidak Ditemukan" data-en="Error 404: Page Not Found">Error 404: Page Not Found</span>
         </div>
 
         <h1 class="text-6xl md:text-8xl font-bold tracking-tighter text-text leading-none">
@@ -133,16 +139,16 @@
         </h1>
         
         <p class="text-base md:text-lg text-muted font-light leading-relaxed max-w-md mx-auto" data-id="Halaman yang Anda cari tidak tersedia atau mungkin telah dipindahkan ke alamat baru." data-en="The page you are looking for is unavailable or might have been moved.">
-            Halaman yang Anda cari tidak tersedia atau mungkin telah dipindahkan ke alamat baru.
+            The page you are looking for is unavailable or might have been moved.
         </p>
         
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 font-mono text-xs w-full sm:w-auto">
             <a href="/" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-text text-background font-bold hover:bg-accent transition-colors gap-2">
                 <i data-lucide="home" class="w-4 h-4"></i>
-                <span data-id="Kembali ke Beranda" data-en="Back To Home">Kembali ke Beranda</span>
+                <span data-id="Kembali ke Beranda" data-en="Back To Home">Back To Home</span>
             </a>
             <a href="/projects" class="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 rounded-lg bg-surface border border-border text-text hover:border-accent hover:text-accent transition-colors gap-2">
-                <span data-id="Jelajahi Proyek" data-en="Browse Projects">Jelajahi Proyek</span>
+                <span data-id="Jelajahi Proyek" data-en="Browse Projects">Browse Projects</span>
                 <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
         </div>
@@ -157,12 +163,12 @@
         
         <!-- Left: Headline & Direct Contact -->
         <div class="flex flex-col gap-1 text-center md:text-left">
-            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="Ready to build something resilient?">
-                Siap membangun sistem yang tangguh?            </span>
-            <a href="mailto:arifmazhuri@gmail.com" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
-                <span data-id="Hubungi Saya" data-en="Let&#039;s talk">
-                    Hubungi Saya                </span>
-                <span class="text-muted/60">• arifmazhuri@gmail.com</span>
+            <span class="text-sm font-semibold text-text opacity-90" data-id="Siap membangun sistem yang tangguh?" data-en="do something in a different way">
+                do something in a different way            </span>
+            <a href="mailto:" class="text-xs text-muted hover:text-text transition-colors inline-flex items-center gap-1.5 justify-center md:justify-start">
+                <span data-id="Hubungi Saya" data-en="2026">
+                    2026                </span>
+                <span class="text-muted/60">• </span>
             </a>
         </div>
         
@@ -171,13 +177,7 @@
                             <a href="https://github.com/fagabondz" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="GitHub Profile" title="GitHub">
                     <img src="/assets/images/github.png" alt="GitHub" class="w-5 h-5 object-contain hover:opacity-80 transition-opacity">
                 </a>
-                                        <a href="www.linkedin.com/in/arifmazhuri" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="LinkedIn Profile" title="LinkedIn">
-                    <img src="/assets/images/linkedin.svg" alt="LinkedIn" class="w-5 h-5 object-contain hover:opacity-80 transition-opacity">
-                </a>
-                                        <a href="mailto:arifmazhuri@gmail.com" class="p-2.5 rounded-lg bg-surface border border-border text-muted hover:text-text hover:border-accent/40 hover:bg-white/5 transition-all duration-200" aria-label="Send Email" title="Email">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                </a>
-                    </div>
+                                            </div>
 
     </div>
 </footer>
